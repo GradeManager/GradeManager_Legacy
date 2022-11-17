@@ -1,0 +1,14 @@
+C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\bin\Debug\gradecalculator.exe.config
+C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\bin\Debug\gradecalculator.exe
+C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\bin\Debug\gradecalculator.pdb
+C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\obj\Debug\gradecalculator.csproj.AssemblyReference.cache
+C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\obj\Debug\gradecalculator.csproj.SuggestedBindingRedirects.cache
+C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\obj\Debug\gradecalculator.mainWindow.resources
+C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\obj\Debug\gradecalculator.Properties.Resources.resources
+C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\obj\Debug\gradecalculator.csproj.GenerateResource.cache
+C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\obj\Debug\gradecalculator.csproj.CoreCompileInputs.cache
+C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\obj\Debug\gradecalculator.exe
+C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\obj\Debug\gradecalculator.pdb
+C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\obj\Debug\gradecalculator.csproj.CopyComplete
