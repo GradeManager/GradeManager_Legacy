@@ -1,5 +1,5 @@
 {
-    "subjects": {
+    "subjects": [{
         "Math": {
             "Erster Test": {
                 "grade": "6",
@@ -13,5 +13,5 @@
         "English": {
 
         }
-    }
+    }]
 }
