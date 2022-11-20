@@ -50,6 +50,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addGrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addGrade.Designer.cs">
+      <DependentUpon>addGrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addSubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addSubject.Designer.cs">
+      <DependentUpon>addSubject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design.cs" />
     <Compile Include="mainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +71,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="removeGrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="removeGrade.Designer.cs">
+      <DependentUpon>removeGrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="removeSubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="removeSubject.Designer.cs">
+      <DependentUpon>removeSubject.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="addGrade.resx">
+      <DependentUpon>addGrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addSubject.resx">
+      <DependentUpon>addSubject.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="mainWindow.resx">
       <DependentUpon>mainWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -70,6 +101,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="removeGrade.resx">
+      <DependentUpon>removeGrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="removeSubject.resx">
+      <DependentUpon>removeSubject.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

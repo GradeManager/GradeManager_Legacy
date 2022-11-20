@@ -30,9 +30,12 @@
         {
             this.subjectBx = new System.Windows.Forms.Panel();
             this.gradeList = new System.Windows.Forms.ListView();
-            this.percentHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.gradeHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.nameHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.gradeHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.percentHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.addSubBtn = new System.Windows.Forms.Button();
+            this.removeSubBtn = new System.Windows.Forms.Button();
+            this.safeConfBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // subjectBx
@@ -40,7 +43,7 @@
             this.subjectBx.AutoScroll = true;
             this.subjectBx.Location = new System.Drawing.Point(12, 12);
             this.subjectBx.Name = "subjectBx";
-            this.subjectBx.Size = new System.Drawing.Size(217, 460);
+            this.subjectBx.Size = new System.Drawing.Size(217, 431);
             this.subjectBx.TabIndex = 1;
             // 
             // gradeList
@@ -59,17 +62,53 @@
             this.gradeList.UseCompatibleStateImageBehavior = false;
             this.gradeList.View = System.Windows.Forms.View.Details;
             // 
-            // percentHeader
+            // nameHeader
             // 
-            this.percentHeader.Text = "Percentage";
+            this.nameHeader.Text = "Exam";
             // 
             // gradeHeader
             // 
             this.gradeHeader.Text = "Grade";
             // 
-            // nameHeader
+            // percentHeader
             // 
-            this.nameHeader.Text = "Exam";
+            this.percentHeader.Text = "Percentage";
+            // 
+            // addSubBtn
+            // 
+            this.addSubBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.addSubBtn.ForeColor = System.Drawing.Color.White;
+            this.addSubBtn.Location = new System.Drawing.Point(12, 449);
+            this.addSubBtn.Name = "addSubBtn";
+            this.addSubBtn.Size = new System.Drawing.Size(61, 23);
+            this.addSubBtn.TabIndex = 3;
+            this.addSubBtn.Text = "Add";
+            this.addSubBtn.UseVisualStyleBackColor = true;
+            this.addSubBtn.Click += new System.EventHandler(this.addSubBtn_Click);
+            // 
+            // removeSubBtn
+            // 
+            this.removeSubBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.removeSubBtn.ForeColor = System.Drawing.Color.White;
+            this.removeSubBtn.Location = new System.Drawing.Point(79, 449);
+            this.removeSubBtn.Name = "removeSubBtn";
+            this.removeSubBtn.Size = new System.Drawing.Size(61, 23);
+            this.removeSubBtn.TabIndex = 4;
+            this.removeSubBtn.Text = "Remove";
+            this.removeSubBtn.UseVisualStyleBackColor = true;
+            this.removeSubBtn.Click += new System.EventHandler(this.removeSubBtn_Click);
+            // 
+            // safeConfBtn
+            // 
+            this.safeConfBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.safeConfBtn.ForeColor = System.Drawing.Color.White;
+            this.safeConfBtn.Location = new System.Drawing.Point(146, 449);
+            this.safeConfBtn.Name = "safeConfBtn";
+            this.safeConfBtn.Size = new System.Drawing.Size(65, 23);
+            this.safeConfBtn.TabIndex = 5;
+            this.safeConfBtn.Text = "Safe";
+            this.safeConfBtn.UseVisualStyleBackColor = true;
+            this.safeConfBtn.Click += new System.EventHandler(this.safeConfBtn_Click);
             // 
             // mainWindow
             // 
@@ -77,6 +116,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(866, 484);
+            this.Controls.Add(this.safeConfBtn);
+            this.Controls.Add(this.removeSubBtn);
+            this.Controls.Add(this.addSubBtn);
             this.Controls.Add(this.gradeList);
             this.Controls.Add(this.subjectBx);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -98,6 +140,9 @@
         private System.Windows.Forms.ColumnHeader percentHeader;
         private System.Windows.Forms.ColumnHeader gradeHeader;
         private System.Windows.Forms.ColumnHeader nameHeader;
+        private System.Windows.Forms.Button addSubBtn;
+        private System.Windows.Forms.Button removeSubBtn;
+        private System.Windows.Forms.Button safeConfBtn;
     }
 }
 

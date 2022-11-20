@@ -12,3 +12,7 @@ C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\obj\Debug\gradecalcu
 C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\obj\Debug\gradecalculator.csproj.CopyComplete
+C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\obj\Debug\gradecalculator.addGrade.resources
+C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\obj\Debug\gradecalculator.addSubject.resources
+C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\obj\Debug\gradecalculator.removeGrade.resources
+C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\obj\Debug\gradecalculator.removeSubject.resources
