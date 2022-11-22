@@ -25,7 +25,8 @@ namespace gradecalculator
                 MessageBox.Show("Select a subject", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            mainWindow.removeSubject((string)selectSubjectBx.SelectedItem);
+            //Remove property from JSON Object
+            mainWindow.Jsubjects.Property((string)selectSubjectBx.SelectedItem).Remove();
             selectSubjectBx.SelectedItem = null;
             this.Close();
         }

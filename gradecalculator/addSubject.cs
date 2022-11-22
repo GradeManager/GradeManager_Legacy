@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace gradecalculator
 {
@@ -10,31 +12,37 @@ namespace gradecalculator
             InitializeComponent();
             Design.createRoundedCorners(this);
         }
-
         private void confirmBtn_Click(object sender, EventArgs e)
         {
-            if (addSubjectBx.Text == "")
+            if (!checkSubject(addSubjectBx.Text))
+                return;
+
+            mainWindow.Jsubjects.Add(new JProperty(addSubjectBx.Text, new JObject()));
+            addSubjectBx.Text = "";
+            this.Close();
+        }
+
+        private bool checkSubject(string subject)
+        {
+            if (subject == "")
             {
                 MessageBox.Show("Enter a subject name", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                return false;
             }
-            if (addSubjectBx.Text.Length > 25)
+            if (subject.Length > 25)
             {
                 MessageBox.Show("Enter a shorter subject name", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                return false;
             }
             foreach (var btn in mainWindow.subjectButtons)
             {
-                if (btn.Text == addSubjectBx.Text)
+                if (btn.Text == subject)
                 {
                     MessageBox.Show("Subject already exists", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
+                    return false;
                 }
             }
-
-            mainWindow.addSubject(addSubjectBx.Text);
-            addSubjectBx.Text = "";
-            this.Close();
+            return true;
         }
 
         private void cancelBtn_Click(object sender, EventArgs e)

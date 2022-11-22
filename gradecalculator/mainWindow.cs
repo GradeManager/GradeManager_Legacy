@@ -29,9 +29,11 @@ namespace gradecalculator
         public static Subject selectedSubject { get; set; }
 
         private const double opacity = 1;
+
         public mainWindow()
         {
             InitializeComponent();
+            InitializeCustomComponent();
         }
 
         private void mainWindow_Load(object sender, EventArgs e)
@@ -133,33 +135,67 @@ namespace gradecalculator
             }
         }
 
-        public static void addSubject(string name)
-        {
-            Jsubjects.Add(new JProperty(name, new JObject()));
-        }
-        public static void removeSubject(string subject)
-        {
-            Jsubjects.Property(subject).Remove();
-        }
-        private void addSubBtn_Click(object sender, EventArgs e)
+        private void addSubject()
         {
             this.Opacity = 0.7;
             aS.ShowDialog();
             this.Opacity = opacity;
             loadJsonConfig();
         }
-
-        private void removeSubBtn_Click(object sender, EventArgs e)
+        private void removeSubject()
         {
             this.Opacity = 0.7;
             rS.ShowDialog();
             this.Opacity = opacity;
             loadJsonConfig();
         }
+
+        //#######--------------------------------------------|
+        //Buttons--------------------------------------------|
+        //#######--------------------------------------------|
+        private void addSubBtn_Click(object sender, EventArgs e)
+        {
+            addSubject();
+            this.ActiveControl = null;
+        }
+
+        private void removeSubBtn_Click(object sender, EventArgs e)
+        {
+            removeSubject();
+            this.ActiveControl = null;
+        }
         private void safeConfBtn_Click(object sender, EventArgs e)
         {
             serializeJsonConfig();
+            this.ActiveControl = null;
         }
+
+        //#######--------------------------------------------|
+        //Buttons--------------------------------------------|
+        //#######--------------------------------------------|
+
+
+        //####################--------------------------------------------|
+        //mW_contextMenu Items--------------------------------------------|
+        //####################--------------------------------------------|
+        private void CM_safeBtn_Click(object sender, EventArgs e)
+        {
+            serializeJsonConfig();
+        }
+        private void CM_AddBtn_Click(object sender, EventArgs e)
+        {
+            addSubject();
+        }
+
+        private void CM_RemoveBtn_Click(object sender, EventArgs e)
+        {
+            removeSubject();
+        }
+
+        //####################--------------------------------------------|
+        //mW_contextMenu Items--------------------------------------------|
+        //####################--------------------------------------------|
+
     }
 
     public class Subject : Button
