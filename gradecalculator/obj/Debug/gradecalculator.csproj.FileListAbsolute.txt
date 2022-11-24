@@ -27,7 +27,6 @@ C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\gradecalculator\obj\
 C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\gradecalculator\obj\Debug\gradecalculator.addSubject.resources
 C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\gradecalculator\obj\Debug\gradecalculator.mainWindow.resources
 C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\gradecalculator\obj\Debug\gradecalculator.Properties.Resources.resources
-C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\gradecalculator\obj\Debug\gradecalculator.removeGrade.resources
 C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\gradecalculator\obj\Debug\gradecalculator.removeSubject.resources
 C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\gradecalculator\obj\Debug\gradecalculator.csproj.GenerateResource.cache
 C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\gradecalculator\obj\Debug\gradecalculator.csproj.CoreCompileInputs.cache

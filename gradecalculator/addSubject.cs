@@ -12,6 +12,10 @@ namespace gradecalculator
             InitializeComponent();
             Design.createRoundedCorners(this);
         }
+        private void addSubject_onload(object sender, EventArgs e)
+        {
+            Design.createTextboxPreview("Subject", addSubjectBx);
+        }
         private void confirmBtn_Click(object sender, EventArgs e)
         {
             if (!checkSubject(addSubjectBx.Text))
@@ -49,11 +53,6 @@ namespace gradecalculator
         {
             addSubjectBx.Text = "";
             this.Close();
-        }
-
-        private void addSubject_onload(object sender, EventArgs e)
-        {
-            Design.createTextboxPreview("Subject", addSubjectBx);
         }
     }
 }

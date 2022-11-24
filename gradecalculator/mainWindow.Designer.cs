@@ -52,6 +52,8 @@
             this.cM_AddBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.cM_sep2 = new System.Windows.Forms.ToolStripSeparator();
             this.cM_RemoveBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.remGradeBtn = new System.Windows.Forms.Button();
+            this.addGradeBtn = new System.Windows.Forms.Button();
             this.mW_contextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,7 +76,7 @@
             this.gradeList.Location = new System.Drawing.Point(427, 12);
             this.gradeList.Name = "gradeList";
             this.gradeList.Scrollable = false;
-            this.gradeList.Size = new System.Drawing.Size(427, 460);
+            this.gradeList.Size = new System.Drawing.Size(427, 431);
             this.gradeList.TabIndex = 2;
             this.gradeList.UseCompatibleStateImageBehavior = false;
             this.gradeList.View = System.Windows.Forms.View.Details;
@@ -179,6 +181,36 @@
             this.cM_RemoveBtn.Size = new System.Drawing.Size(159, 22);
             this.cM_RemoveBtn.Text = "Remove Subject";
             // 
+            // remGradeBtn
+            // 
+            this.remGradeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.remGradeBtn.ForeColor = System.Drawing.Color.White;
+            this.remGradeBtn.Image = ((System.Drawing.Image)(resources.GetObject("remGradeBtn.Image")));
+            this.remGradeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.remGradeBtn.Location = new System.Drawing.Point(751, 449);
+            this.remGradeBtn.Name = "remGradeBtn";
+            this.remGradeBtn.Size = new System.Drawing.Size(103, 23);
+            this.remGradeBtn.TabIndex = 7;
+            this.remGradeBtn.Text = "Remove Grade";
+            this.remGradeBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.remGradeBtn.UseVisualStyleBackColor = true;
+            this.remGradeBtn.Click += new System.EventHandler(this.remGradeBtn_Click);
+            // 
+            // addGradeBtn
+            // 
+            this.addGradeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.addGradeBtn.ForeColor = System.Drawing.Color.White;
+            this.addGradeBtn.Image = ((System.Drawing.Image)(resources.GetObject("addGradeBtn.Image")));
+            this.addGradeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.addGradeBtn.Location = new System.Drawing.Point(427, 449);
+            this.addGradeBtn.Name = "addGradeBtn";
+            this.addGradeBtn.Size = new System.Drawing.Size(84, 23);
+            this.addGradeBtn.TabIndex = 6;
+            this.addGradeBtn.Text = "Add Grade";
+            this.addGradeBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.addGradeBtn.UseVisualStyleBackColor = true;
+            this.addGradeBtn.Click += new System.EventHandler(this.addGradeBtn_Click);
+            // 
             // mainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -186,6 +218,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(866, 484);
             this.ContextMenuStrip = this.mW_contextMenu;
+            this.Controls.Add(this.remGradeBtn);
+            this.Controls.Add(this.addGradeBtn);
             this.Controls.Add(this.safeConfBtn);
             this.Controls.Add(this.removeSubBtn);
             this.Controls.Add(this.addSubBtn);
@@ -199,6 +233,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.mainWindow_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.mW_KeyDown);
             this.mW_contextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -220,6 +255,8 @@
         private System.Windows.Forms.ToolStripMenuItem cM_RemoveBtn;
         private System.Windows.Forms.ToolStripSeparator cM_sep1;
         private System.Windows.Forms.ToolStripSeparator cM_sep2;
+        private System.Windows.Forms.Button remGradeBtn;
+        private System.Windows.Forms.Button addGradeBtn;
     }
 }
 

@@ -24,7 +24,6 @@ namespace gradecalculator
         public static addSubject aS { get; } = new addSubject();
         public static removeSubject rS { get; } = new removeSubject();
         public static addGrade aG { get; } = new addGrade();
-        public static removeGrade rG { get; } = new removeGrade();
 
         public static Subject selectedSubject { get; set; }
 
@@ -38,7 +37,8 @@ namespace gradecalculator
 
         private void mainWindow_Load(object sender, EventArgs e)
         {
-            this.Opacity =
+            this.Opacity = opacity;
+            this.KeyPreview = true;
             gradeHeader.Width = 100;
             percentHeader.Width = 100;
             nameHeader.Width = gradeList.Width - percentHeader.Width - gradeHeader.Width;
@@ -149,9 +149,20 @@ namespace gradecalculator
             this.Opacity = opacity;
             loadJsonConfig();
         }
+        private void addGrade()
+        {
+            this.Opacity = 0.7;
+            aG.ShowDialog();
+            this.Opacity = opacity;
+            loadJsonConfig();
+        }
+        private void removeGrade()
+        {
+
+        }
 
         //#######--------------------------------------------|
-        //Buttons--------------------------------------------|
+        //Controls--------------------------------------------|
         //#######--------------------------------------------|
         private void addSubBtn_Click(object sender, EventArgs e)
         {
@@ -170,8 +181,28 @@ namespace gradecalculator
             this.ActiveControl = null;
         }
 
+        private void addGradeBtn_Click(object sender, EventArgs e)
+        {
+            addGrade();
+            this.ActiveControl = null;
+        }
+
+        private void remGradeBtn_Click(object sender, EventArgs e)
+        {
+            removeGrade();
+            this.ActiveControl = null;
+        }
+
+        private void mW_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.S && e.Modifiers == Keys.Control)
+            {
+                serializeJsonConfig();
+            }
+        }
+
         //#######--------------------------------------------|
-        //Buttons--------------------------------------------|
+        //Controls--------------------------------------------|
         //#######--------------------------------------------|
 
 
@@ -192,10 +223,10 @@ namespace gradecalculator
             removeSubject();
         }
 
+        
         //####################--------------------------------------------|
         //mW_contextMenu Items--------------------------------------------|
         //####################--------------------------------------------|
-
     }
 
     public class Subject : Button
@@ -208,7 +239,6 @@ namespace gradecalculator
         }
 
         public List<Exam> exames { get; set; }
-
         public Subject(string subject)
         {
             exames = new List<Exam>();
