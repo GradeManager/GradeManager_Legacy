@@ -13,6 +13,7 @@ using Newtonsoft.Json.Linq;
 using System.Xml.Linq;
 using System.Text.RegularExpressions;
 using static gradecalculator.Subject;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace gradecalculator
 {
@@ -33,6 +34,7 @@ namespace gradecalculator
 
         public const string JgradeString = "grade";
         public const string JpercentageString = "percentage";
+        public const string JdateString = "date";
 
         private const double opacity = 1;
         private const int panelNormalHeight = 26;
@@ -210,8 +212,49 @@ namespace gradecalculator
         }
         private void removeGrade()
         {
+            foreach (ListViewItem item in gradeList.SelectedItems)
+            {
+                selectedSubject.Jsubject.Property(item.Text).Remove();
+            }
+            selectedSubject.getExamesFromConfig();
+            selectedSubject.displayExames(gradeList);
+            
             if ((bool)Jautosafemode.Value)
                 serializeJsonConfig();
+        }
+
+        private void exportCSV()
+        {
+            Stream stream;
+            StreamWriter sw;
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    if ((stream = saveFileDialog.OpenFile()) != null)
+                    {
+                        sw = new StreamWriter(stream);
+                        sw.WriteLine("Subject; Exam; Grade; Percentage; Date");
+
+                        foreach (Subject subj in subjectButtons)
+                        {
+                            foreach (Exam ex in subj.exames)
+                            {
+                                sw.WriteLine($"{subj.Text}; {ex.examname}; {ex.grade}; {ex.percentage}; {ex.date}");
+                            }
+                        }
+                        sw.Dispose();
+                        stream.Dispose();
+                        sw.Close();
+                        stream.Close();
+                    }
+                } catch
+                {
+                    MessageBox.Show("Failed to create CSV\r\n\r\nError: File is in use by another process", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
         }
 
         //#######--------------------------------------------|
@@ -244,10 +287,9 @@ namespace gradecalculator
             this.ActiveControl = null;
         }
 
-        private void remGradeBtn_Click(object sender, EventArgs e)
+        private void exportCSVBtn_Click(object sender, EventArgs e)
         {
-            removeGrade();
-            toggleDropDown();
+            exportCSV();
             this.ActiveControl = null;
         }
 
@@ -281,9 +323,19 @@ namespace gradecalculator
             addSubject();
         }
 
+        private void CM_AddGrade_Click(object sender, System.EventArgs e)
+        {
+            addGrade();
+        }
+
         private void CM_RemoveBtn_Click(object sender, EventArgs e)
         {
             removeSubject();
+        }
+
+        private void CM_RemoveGrade_Click(object sender, System.EventArgs e)
+        {
+            removeGrade();
         }
         //####################--------------------------------------------|
         //mW_contextMenu Items--------------------------------------------|
@@ -297,6 +349,8 @@ namespace gradecalculator
             public string examname { get; set; }
             public double grade { get; set; }
             public int percentage { get; set; }
+
+            public DateTime date { get; set; }
         }
 
         public List<Exam> exames { get; set; }
@@ -331,6 +385,8 @@ namespace gradecalculator
                             ex.grade = Convert.ToDouble((string)examvalue.Value);
                         else if (examvalue.Key == mainWindow.JpercentageString)
                             ex.percentage = Convert.ToInt32((string)examvalue.Value);
+                        else if (examvalue.Key == mainWindow.JdateString)
+                            ex.date = (DateTime)examvalue.Value;
                     }
                     exames.Add(ex);
                 }
@@ -355,6 +411,7 @@ namespace gradecalculator
                 lvi.Text = exam.examname;
                 lvi.SubItems.Add(exam.grade.ToString());
                 lvi.SubItems.Add(exam.percentage.ToString());
+                lvi.SubItems.Add(exam.date.ToString());
                 listView.Items.Add(lvi);
             }
         }

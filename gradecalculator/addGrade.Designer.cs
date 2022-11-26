@@ -36,6 +36,7 @@
             this.percentageBx = new System.Windows.Forms.NumericUpDown();
             this.gradeLbl = new System.Windows.Forms.Label();
             this.percentageLbl = new System.Windows.Forms.Label();
+            this.datePicker = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.gradeBx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.percentageBx)).BeginInit();
             this.SuspendLayout();
@@ -43,11 +44,11 @@
             // addGradeLbl
             // 
             this.addGradeLbl.AutoSize = true;
-            this.addGradeLbl.Font = new System.Drawing.Font("Tempus Sans ITC", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addGradeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addGradeLbl.ForeColor = System.Drawing.Color.Black;
             this.addGradeLbl.Location = new System.Drawing.Point(47, 27);
             this.addGradeLbl.Name = "addGradeLbl";
-            this.addGradeLbl.Size = new System.Drawing.Size(86, 19);
+            this.addGradeLbl.Size = new System.Drawing.Size(87, 18);
             this.addGradeLbl.TabIndex = 4;
             this.addGradeLbl.Text = "Add Grade";
             // 
@@ -62,7 +63,7 @@
             // 
             this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cancelBtn.ForeColor = System.Drawing.Color.Black;
-            this.cancelBtn.Location = new System.Drawing.Point(12, 172);
+            this.cancelBtn.Location = new System.Drawing.Point(11, 199);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 23);
             this.cancelBtn.TabIndex = 4;
@@ -74,7 +75,7 @@
             // 
             this.confirmBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.confirmBtn.ForeColor = System.Drawing.Color.Black;
-            this.confirmBtn.Location = new System.Drawing.Point(104, 172);
+            this.confirmBtn.Location = new System.Drawing.Point(103, 199);
             this.confirmBtn.Name = "confirmBtn";
             this.confirmBtn.Size = new System.Drawing.Size(75, 23);
             this.confirmBtn.TabIndex = 3;
@@ -136,11 +137,21 @@
             this.percentageLbl.TabIndex = 13;
             this.percentageLbl.Text = "Percentage";
             // 
+            // datePicker
+            // 
+            this.datePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePicker.Location = new System.Drawing.Point(39, 146);
+            this.datePicker.Name = "datePicker";
+            this.datePicker.Size = new System.Drawing.Size(103, 18);
+            this.datePicker.TabIndex = 14;
+            this.datePicker.Value = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
+            // 
             // addGrade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(191, 207);
+            this.ClientSize = new System.Drawing.Size(191, 234);
+            this.Controls.Add(this.datePicker);
             this.Controls.Add(this.percentageLbl);
             this.Controls.Add(this.gradeLbl);
             this.Controls.Add(this.percentageBx);
@@ -172,5 +183,6 @@
         private System.Windows.Forms.NumericUpDown percentageBx;
         private System.Windows.Forms.Label gradeLbl;
         private System.Windows.Forms.Label percentageLbl;
+        private System.Windows.Forms.DateTimePicker datePicker;
     }
 }

@@ -45,22 +45,25 @@ namespace gradecalculator
         {
             if (!checkExamname(examNameBx.Text))
                 return;
-            if (!addExamToJSON(examNameBx.Text, (double)gradeBx.Value, (int)percentageBx.Value))
+            if (!addExamToJSON(examNameBx.Text, (double)gradeBx.Value, (int)percentageBx.Value, datePicker.Value))
                 return;
             //Rewrap Body
             mainWindow.selectedSubject.getExamesFromConfig();
 
+            gradeBx.Value = (decimal)standardGrade;
+            percentageBx.Value = (decimal)standardPercentage;
             examNameBx.Text = "";
             this.Close();
         }
 
-        private bool addExamToJSON(string examname, double grade, int percentage)
+        private bool addExamToJSON(string examname, double grade, int percentage, DateTime date)
         {
             if (!(mainWindow.selectedSubject == null || mainWindow.selectedSubject.Jsubject == null))
             {
                 JProperty Jexam = new JProperty(examname, new JObject(
                     new JProperty(mainWindow.JgradeString, grade),
-                    new JProperty(mainWindow.JpercentageString, percentage)
+                    new JProperty(mainWindow.JpercentageString, percentage),
+                    new JProperty(mainWindow.JdateString, date)
                 ));
                 mainWindow.selectedSubject.Jsubject.Add(Jexam);
                 return true;

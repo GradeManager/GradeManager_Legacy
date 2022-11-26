@@ -26,6 +26,8 @@
             this.cM_safeBtn.Click += CM_safeBtn_Click;
             this.cM_AddBtn.Click += CM_AddBtn_Click;
             this.cM_RemoveBtn.Click += CM_RemoveBtn_Click;
+            this.cM_AddGrade.Click += CM_AddGrade_Click; ;
+            this.cM_RemoveGrade.Click += CM_RemoveGrade_Click;
 
             this.dropDownPanel.Height = panelNormalHeight;
         }
@@ -51,14 +53,19 @@
             this.cM_sep1 = new System.Windows.Forms.ToolStripSeparator();
             this.cM_AddBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.cM_sep2 = new System.Windows.Forms.ToolStripSeparator();
+            this.cM_AddGrade = new System.Windows.Forms.ToolStripMenuItem();
+            this.cM_sep3 = new System.Windows.Forms.ToolStripSeparator();
             this.cM_RemoveBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.cM_sep4 = new System.Windows.Forms.ToolStripSeparator();
+            this.cM_RemoveGrade = new System.Windows.Forms.ToolStripMenuItem();
             this.dropDownPanel = new System.Windows.Forms.Panel();
             this.dropDownBtn = new System.Windows.Forms.Button();
             this.removeSubBtn = new System.Windows.Forms.Button();
             this.autoSafeModeBtn = new System.Windows.Forms.Button();
-            this.remGradeBtn = new System.Windows.Forms.Button();
+            this.exportCSVBtn = new System.Windows.Forms.Button();
             this.addSubBtn = new System.Windows.Forms.Button();
             this.addGradeBtn = new System.Windows.Forms.Button();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.mW_contextMenu.SuspendLayout();
             this.dropDownPanel.SuspendLayout();
             this.SuspendLayout();
@@ -111,10 +118,14 @@
             this.cM_sep1,
             this.cM_AddBtn,
             this.cM_sep2,
-            this.cM_RemoveBtn});
+            this.cM_AddGrade,
+            this.cM_sep3,
+            this.cM_RemoveBtn,
+            this.cM_sep4,
+            this.cM_RemoveGrade});
             this.mW_contextMenu.Name = "contextMenu";
             this.mW_contextMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.mW_contextMenu.Size = new System.Drawing.Size(160, 82);
+            this.mW_contextMenu.Size = new System.Drawing.Size(160, 138);
             // 
             // cM_safeBtn
             // 
@@ -140,12 +151,36 @@
             this.cM_sep2.Name = "cM_sep2";
             this.cM_sep2.Size = new System.Drawing.Size(156, 6);
             // 
+            // cM_AddGrade
+            // 
+            this.cM_AddGrade.Image = ((System.Drawing.Image)(resources.GetObject("cM_AddGrade.Image")));
+            this.cM_AddGrade.Name = "cM_AddGrade";
+            this.cM_AddGrade.Size = new System.Drawing.Size(159, 22);
+            this.cM_AddGrade.Text = "Add Grade";
+            // 
+            // cM_sep3
+            // 
+            this.cM_sep3.Name = "cM_sep3";
+            this.cM_sep3.Size = new System.Drawing.Size(156, 6);
+            // 
             // cM_RemoveBtn
             // 
             this.cM_RemoveBtn.Image = ((System.Drawing.Image)(resources.GetObject("cM_RemoveBtn.Image")));
             this.cM_RemoveBtn.Name = "cM_RemoveBtn";
             this.cM_RemoveBtn.Size = new System.Drawing.Size(159, 22);
             this.cM_RemoveBtn.Text = "Remove Subject";
+            // 
+            // cM_sep4
+            // 
+            this.cM_sep4.Name = "cM_sep4";
+            this.cM_sep4.Size = new System.Drawing.Size(156, 6);
+            // 
+            // cM_RemoveGrade
+            // 
+            this.cM_RemoveGrade.Image = ((System.Drawing.Image)(resources.GetObject("cM_RemoveGrade.Image")));
+            this.cM_RemoveGrade.Name = "cM_RemoveGrade";
+            this.cM_RemoveGrade.Size = new System.Drawing.Size(159, 22);
+            this.cM_RemoveGrade.Text = "Remove Grade";
             // 
             // dropDownPanel
             // 
@@ -154,7 +189,7 @@
             this.dropDownPanel.Controls.Add(this.dropDownBtn);
             this.dropDownPanel.Controls.Add(this.removeSubBtn);
             this.dropDownPanel.Controls.Add(this.autoSafeModeBtn);
-            this.dropDownPanel.Controls.Add(this.remGradeBtn);
+            this.dropDownPanel.Controls.Add(this.exportCSVBtn);
             this.dropDownPanel.Controls.Add(this.addSubBtn);
             this.dropDownPanel.Controls.Add(this.addGradeBtn);
             this.dropDownPanel.Location = new System.Drawing.Point(12, 12);
@@ -219,24 +254,24 @@
             this.autoSafeModeBtn.UseVisualStyleBackColor = false;
             this.autoSafeModeBtn.Click += new System.EventHandler(this.autoSafeModeBtn_Click);
             // 
-            // remGradeBtn
+            // exportCSVBtn
             // 
-            this.remGradeBtn.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.remGradeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.remGradeBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.remGradeBtn.FlatAppearance.BorderSize = 0;
-            this.remGradeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.remGradeBtn.ForeColor = System.Drawing.Color.Black;
-            this.remGradeBtn.Image = ((System.Drawing.Image)(resources.GetObject("remGradeBtn.Image")));
-            this.remGradeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.remGradeBtn.Location = new System.Drawing.Point(0, 92);
-            this.remGradeBtn.Name = "remGradeBtn";
-            this.remGradeBtn.Size = new System.Drawing.Size(119, 23);
-            this.remGradeBtn.TabIndex = 7;
-            this.remGradeBtn.Text = "Remove Grade";
-            this.remGradeBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.remGradeBtn.UseVisualStyleBackColor = false;
-            this.remGradeBtn.Click += new System.EventHandler(this.remGradeBtn_Click);
+            this.exportCSVBtn.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.exportCSVBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.exportCSVBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.exportCSVBtn.FlatAppearance.BorderSize = 0;
+            this.exportCSVBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exportCSVBtn.ForeColor = System.Drawing.Color.Black;
+            this.exportCSVBtn.Image = global::gradecalculator.Properties.Resources.export;
+            this.exportCSVBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.exportCSVBtn.Location = new System.Drawing.Point(0, 92);
+            this.exportCSVBtn.Name = "exportCSVBtn";
+            this.exportCSVBtn.Size = new System.Drawing.Size(119, 23);
+            this.exportCSVBtn.TabIndex = 7;
+            this.exportCSVBtn.Text = "Export CSV";
+            this.exportCSVBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.exportCSVBtn.UseVisualStyleBackColor = false;
+            this.exportCSVBtn.Click += new System.EventHandler(this.exportCSVBtn_Click);
             // 
             // addSubBtn
             // 
@@ -276,6 +311,12 @@
             this.addGradeBtn.UseVisualStyleBackColor = false;
             this.addGradeBtn.Click += new System.EventHandler(this.addGradeBtn_Click);
             // 
+            // saveFileDialog
+            // 
+            this.saveFileDialog.FileName = "grades.csv";
+            this.saveFileDialog.Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
+            this.saveFileDialog.RestoreDirectory = true;
+            // 
             // mainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -292,7 +333,7 @@
             this.Opacity = 0.9D;
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GradeManager";
+            this.Text = "Grade Manager";
             this.Load += new System.EventHandler(this.mainWindow_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.mW_KeyDown);
             this.mW_contextMenu.ResumeLayout(false);
@@ -317,11 +358,16 @@
         private System.Windows.Forms.ToolStripMenuItem cM_RemoveBtn;
         private System.Windows.Forms.ToolStripSeparator cM_sep1;
         private System.Windows.Forms.ToolStripSeparator cM_sep2;
-        private System.Windows.Forms.Button remGradeBtn;
+        private System.Windows.Forms.Button exportCSVBtn;
         private System.Windows.Forms.Button addGradeBtn;
         private System.Windows.Forms.ColumnHeader dateHeader;
         private System.Windows.Forms.Panel dropDownPanel;
         private System.Windows.Forms.Button dropDownBtn;
+        private System.Windows.Forms.ToolStripMenuItem cM_AddGrade;
+        private System.Windows.Forms.ToolStripSeparator cM_sep3;
+        private System.Windows.Forms.ToolStripSeparator cM_sep4;
+        private System.Windows.Forms.ToolStripMenuItem cM_RemoveGrade;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 }
 
