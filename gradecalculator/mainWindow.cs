@@ -11,6 +11,8 @@ using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Xml.Linq;
+using System.Text.RegularExpressions;
+using static gradecalculator.Subject;
 
 namespace gradecalculator
 {
@@ -27,7 +29,11 @@ namespace gradecalculator
 
         public static Subject selectedSubject { get; set; }
 
+        public const string JgradeString = "grade";
+        public const string JpercentageString = "percentage";
+
         private const double opacity = 1;
+
 
         public mainWindow()
         {
@@ -44,10 +50,10 @@ namespace gradecalculator
             nameHeader.Width = gradeList.Width - percentHeader.Width - gradeHeader.Width;
             if (!deserializeJsonConfig())
                 Application.Exit();
-            loadJsonConfig();
+            getSubjectsFromConfig();
         }
 
-        private void loadJsonConfig()
+        private void getSubjectsFromConfig()
         {
             subjectBx.Controls.Clear();
             subjectButtons.Clear();
@@ -115,46 +121,36 @@ namespace gradecalculator
             subject.Click += (object sender, EventArgs e) =>
             {
                 selectedSubject = subject;
-                displayExames(subject);
+                subject.getExamesFromConfig();
+                subject.displayExames(gradeList);
             };
 
             subjectButtons.Add(subject);
             subjectBx.Controls.Add(subject);
         }
 
-        private void displayExames(Subject subject)
-        {
-            gradeList.Items.Clear();
-            foreach (Subject.Exam exam in subject.exames)
-            {
-                ListViewItem lvi = new ListViewItem();
-                lvi.Text = exam.examname;
-                lvi.SubItems.Add(exam.grade.ToString());
-                lvi.SubItems.Add(exam.percentage.ToString());
-                gradeList.Items.Add(lvi);
-            }
-        }
-
         private void addSubject()
         {
-            this.Opacity = 0.7;
+            Design.changeItemVisibility(this, false, 0.8);
             aS.ShowDialog();
-            this.Opacity = opacity;
-            loadJsonConfig();
+            Design.changeItemVisibility(this, true, opacity);
+            getSubjectsFromConfig();
         }
         private void removeSubject()
         {
-            this.Opacity = 0.7;
+            Design.changeItemVisibility(this, false, 0.8);
             rS.ShowDialog();
-            this.Opacity = opacity;
-            loadJsonConfig();
+            Design.changeItemVisibility(this, true, opacity);
+            getSubjectsFromConfig();
         }
         private void addGrade()
         {
-            this.Opacity = 0.7;
+            Design.changeItemVisibility(this, false, 0.8);
             aG.ShowDialog();
-            this.Opacity = opacity;
-            loadJsonConfig();
+            Design.changeItemVisibility(this, true, opacity);
+            //Rewrap Body of selectedSubject
+            if (selectedSubject != null)
+                selectedSubject.displayExames(gradeList);
         }
         private void removeGrade()
         {
@@ -239,26 +235,62 @@ namespace gradecalculator
         }
 
         public List<Exam> exames { get; set; }
+        public JObject Jsubject { get; set; }
         public Subject(string subject)
         {
             exames = new List<Exam>();
+            Jsubject = (JObject)mainWindow.Jsubjects[subject];
 
-            
-            //Fill in the examnames
-            foreach (var exam in (JObject)mainWindow.Jsubjects[subject])
+            getExamesFromConfig();
+        }
+
+        /// <summary>
+        /// Rewraps the Exam list of this subject with the virtual config
+        /// </summary>
+        /// <returns>Result</returns>
+        public bool getExamesFromConfig()
+        {
+            try
             {
-                Exam ex = new Exam();
-                ex.examname = exam.Key;
-
-                //Fill in values
-                foreach(var examvalue in (JObject)exam.Value)
+                exames.Clear();
+                //Fill in the examnames
+                foreach (var exam in Jsubject)
                 {
-                    if (examvalue.Key == "grade")
-                        ex.grade = Convert.ToDouble((string)examvalue.Value);
-                    else if (examvalue.Key == "percentage")
-                        ex.percentage = Convert.ToInt32((string)examvalue.Value);
+                    Exam ex = new Exam();
+                    ex.examname = exam.Key;
+
+                    //Fill in values
+                    foreach (var examvalue in (JObject)exam.Value)
+                    {
+                        if (examvalue.Key == mainWindow.JgradeString)
+                            ex.grade = Convert.ToDouble((string)examvalue.Value);
+                        else if (examvalue.Key == mainWindow.JpercentageString)
+                            ex.percentage = Convert.ToInt32((string)examvalue.Value);
+                    }
+                    exames.Add(ex);
                 }
-                exames.Add(ex);
+                return true;
+            }
+            catch
+            {
+                MessageBox.Show($"Failed to load config\r\nError: config file at " +
+                    $"{Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\\config.json"}" +
+                    $" is corrupt", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return false;
+            }
+        }
+
+        public void displayExames(ListView listView)
+        {
+            listView.Items.Clear();
+            foreach (Exam exam in exames)
+            {
+                ListViewItem lvi = new ListViewItem();
+                lvi.Text = exam.examname;
+                lvi.SubItems.Add(exam.grade.ToString());
+                lvi.SubItems.Add(exam.percentage.ToString());
+                listView.Items.Add(lvi);
             }
         }
     }
