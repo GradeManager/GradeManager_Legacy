@@ -29,28 +29,46 @@ namespace gradecalculator
 
         public static Subject selectedSubject { get; set; }
 
+        private static JValue Jautosafemode { get; set; }
+
         public const string JgradeString = "grade";
         public const string JpercentageString = "percentage";
 
         private const double opacity = 1;
+        private const int panelNormalHeight = 26;
+        private const int panelExpandedHeight = 138;
 
 
         public mainWindow()
         {
             InitializeComponent();
             InitializeCustomComponent();
+            Application.ApplicationExit += new EventHandler(OnApplicationExit);
         }
 
         private void mainWindow_Load(object sender, EventArgs e)
         {
             this.Opacity = opacity;
             this.KeyPreview = true;
-            gradeHeader.Width = 100;
-            percentHeader.Width = 100;
-            nameHeader.Width = gradeList.Width - percentHeader.Width - gradeHeader.Width;
+            gradeHeader.Width = 80;
+            percentHeader.Width = 80;
+            dateHeader.Width = 120;
+            nameHeader.Width = gradeList.Width - percentHeader.Width - gradeHeader.Width - dateHeader.Width;
             if (!deserializeJsonConfig())
                 Application.Exit();
             getSubjectsFromConfig();
+        }
+
+        private void OnApplicationExit(object sender, EventArgs e)
+        {
+            if ((bool)Jautosafemode.Value)
+                serializeJsonConfig();
+            else
+            {
+                var msgBtns = MessageBox.Show("Safe changes?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (msgBtns == DialogResult.Yes)
+                    serializeJsonConfig();
+            }
         }
 
         private void getSubjectsFromConfig()
@@ -78,7 +96,12 @@ namespace gradecalculator
                 string json = sr.ReadToEnd();
                 file = JObject.Parse(json);
                 Jsubjects = (JObject)file["subjects"];
+                Jautosafemode = (JValue)file["autosafemode"];
             }
+            if (!(bool)Jautosafemode.Value)
+                autoSafeModeBtn.Image = Properties.Resources.disable;
+            else
+                autoSafeModeBtn.Image = Properties.Resources.enable;
             return true;
         }
 
@@ -104,6 +127,33 @@ namespace gradecalculator
         private string GetDirectoryFromExecutable()
         {
             return Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+        }
+
+        private void toggleDropDown()
+        {
+            if (dropDownPanel.Height == panelExpandedHeight)
+            {
+                dropDownPanel.Height = panelNormalHeight;
+                dropDownBtn.Image = Properties.Resources.menu_dots;
+            }
+            else
+            {
+                dropDownPanel.Height = panelExpandedHeight;
+                dropDownBtn.Image = Properties.Resources.cross;
+            }
+        }
+
+        private void toggleAutoSafeMode()
+        {
+            if (!(bool)Jautosafemode.Value)
+            {
+                Jautosafemode.Value = true;
+                autoSafeModeBtn.Image = Properties.Resources.enable;
+            } else
+            {
+                Jautosafemode.Value = false;
+                autoSafeModeBtn.Image = Properties.Resources.disable;
+            }
         }
 
         private void createSubButton(string Subject, int index)
@@ -135,6 +185,8 @@ namespace gradecalculator
             aS.ShowDialog();
             Design.changeItemVisibility(this, true, opacity);
             getSubjectsFromConfig();
+            if ((bool)Jautosafemode.Value)
+                serializeJsonConfig();
         }
         private void removeSubject()
         {
@@ -142,6 +194,8 @@ namespace gradecalculator
             rS.ShowDialog();
             Design.changeItemVisibility(this, true, opacity);
             getSubjectsFromConfig();
+            if ((bool)Jautosafemode.Value)
+                serializeJsonConfig();
         }
         private void addGrade()
         {
@@ -151,10 +205,13 @@ namespace gradecalculator
             //Rewrap Body of selectedSubject
             if (selectedSubject != null)
                 selectedSubject.displayExames(gradeList);
+            if ((bool)Jautosafemode.Value)
+                serializeJsonConfig();
         }
         private void removeGrade()
         {
-
+            if ((bool)Jautosafemode.Value)
+                serializeJsonConfig();
         }
 
         //#######--------------------------------------------|
@@ -163,29 +220,34 @@ namespace gradecalculator
         private void addSubBtn_Click(object sender, EventArgs e)
         {
             addSubject();
+            toggleDropDown();
             this.ActiveControl = null;
         }
 
         private void removeSubBtn_Click(object sender, EventArgs e)
         {
             removeSubject();
+            toggleDropDown();
             this.ActiveControl = null;
         }
-        private void safeConfBtn_Click(object sender, EventArgs e)
+
+        private void autoSafeModeBtn_Click(object sender, EventArgs e)
         {
-            serializeJsonConfig();
+            toggleAutoSafeMode();
             this.ActiveControl = null;
         }
 
         private void addGradeBtn_Click(object sender, EventArgs e)
         {
             addGrade();
+            toggleDropDown();
             this.ActiveControl = null;
         }
 
         private void remGradeBtn_Click(object sender, EventArgs e)
         {
             removeGrade();
+            toggleDropDown();
             this.ActiveControl = null;
         }
 
@@ -195,6 +257,11 @@ namespace gradecalculator
             {
                 serializeJsonConfig();
             }
+        }
+
+        private void dropDownBtn_Click(object sender, EventArgs e)
+        {
+            toggleDropDown();  
         }
 
         //#######--------------------------------------------|
@@ -218,8 +285,6 @@ namespace gradecalculator
         {
             removeSubject();
         }
-
-        
         //####################--------------------------------------------|
         //mW_contextMenu Items--------------------------------------------|
         //####################--------------------------------------------|
