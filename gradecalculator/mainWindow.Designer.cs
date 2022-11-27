@@ -49,23 +49,25 @@
             this.percentHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dateHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.mW_contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.cM_safeBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.cM_sep1 = new System.Windows.Forms.ToolStripSeparator();
-            this.cM_AddBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.cM_sep2 = new System.Windows.Forms.ToolStripSeparator();
-            this.cM_AddGrade = new System.Windows.Forms.ToolStripMenuItem();
             this.cM_sep3 = new System.Windows.Forms.ToolStripSeparator();
-            this.cM_RemoveBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.cM_sep4 = new System.Windows.Forms.ToolStripSeparator();
-            this.cM_RemoveGrade = new System.Windows.Forms.ToolStripMenuItem();
             this.dropDownPanel = new System.Windows.Forms.Panel();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.saveFileDialogJson = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.cM_safeBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.cM_AddBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.cM_AddGrade = new System.Windows.Forms.ToolStripMenuItem();
+            this.cM_RemoveBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.cM_RemoveGrade = new System.Windows.Forms.ToolStripMenuItem();
+            this.previewConfBtn = new System.Windows.Forms.Button();
+            this.importConfBtn = new System.Windows.Forms.Button();
             this.dropDownBtn = new System.Windows.Forms.Button();
-            this.removeSubBtn = new System.Windows.Forms.Button();
+            this.exportConfBtn = new System.Windows.Forms.Button();
             this.autoSafeModeBtn = new System.Windows.Forms.Button();
             this.exportCSVBtn = new System.Windows.Forms.Button();
-            this.addSubBtn = new System.Windows.Forms.Button();
-            this.addGradeBtn = new System.Windows.Forms.Button();
-            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.mW_contextMenu.SuspendLayout();
             this.dropDownPanel.SuspendLayout();
             this.SuspendLayout();
@@ -127,17 +129,63 @@
             this.mW_contextMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.mW_contextMenu.Size = new System.Drawing.Size(160, 138);
             // 
+            // cM_sep1
+            // 
+            this.cM_sep1.Name = "cM_sep1";
+            this.cM_sep1.Size = new System.Drawing.Size(156, 6);
+            // 
+            // cM_sep2
+            // 
+            this.cM_sep2.Name = "cM_sep2";
+            this.cM_sep2.Size = new System.Drawing.Size(156, 6);
+            // 
+            // cM_sep3
+            // 
+            this.cM_sep3.Name = "cM_sep3";
+            this.cM_sep3.Size = new System.Drawing.Size(156, 6);
+            // 
+            // cM_sep4
+            // 
+            this.cM_sep4.Name = "cM_sep4";
+            this.cM_sep4.Size = new System.Drawing.Size(156, 6);
+            // 
+            // dropDownPanel
+            // 
+            this.dropDownPanel.BackColor = System.Drawing.Color.DimGray;
+            this.dropDownPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.dropDownPanel.Controls.Add(this.previewConfBtn);
+            this.dropDownPanel.Controls.Add(this.importConfBtn);
+            this.dropDownPanel.Controls.Add(this.dropDownBtn);
+            this.dropDownPanel.Controls.Add(this.exportConfBtn);
+            this.dropDownPanel.Controls.Add(this.autoSafeModeBtn);
+            this.dropDownPanel.Controls.Add(this.exportCSVBtn);
+            this.dropDownPanel.Location = new System.Drawing.Point(12, 12);
+            this.dropDownPanel.Name = "dropDownPanel";
+            this.dropDownPanel.Size = new System.Drawing.Size(119, 138);
+            this.dropDownPanel.TabIndex = 9;
+            // 
+            // saveFileDialog
+            // 
+            this.saveFileDialog.FileName = "grades.csv";
+            this.saveFileDialog.Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
+            this.saveFileDialog.RestoreDirectory = true;
+            // 
+            // saveFileDialogJson
+            // 
+            this.saveFileDialogJson.FileName = "config.json";
+            this.saveFileDialogJson.Filter = "json files (*.json)|*.json|All files (*.*)|*.*";
+            this.saveFileDialogJson.RestoreDirectory = true;
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.Filter = "json files (config.json)|config.json";
+            // 
             // cM_safeBtn
             // 
             this.cM_safeBtn.Image = ((System.Drawing.Image)(resources.GetObject("cM_safeBtn.Image")));
             this.cM_safeBtn.Name = "cM_safeBtn";
             this.cM_safeBtn.Size = new System.Drawing.Size(159, 22);
             this.cM_safeBtn.Text = "Safe";
-            // 
-            // cM_sep1
-            // 
-            this.cM_sep1.Name = "cM_sep1";
-            this.cM_sep1.Size = new System.Drawing.Size(156, 6);
             // 
             // cM_AddBtn
             // 
@@ -146,22 +194,12 @@
             this.cM_AddBtn.Size = new System.Drawing.Size(159, 22);
             this.cM_AddBtn.Text = "Add Subject";
             // 
-            // cM_sep2
-            // 
-            this.cM_sep2.Name = "cM_sep2";
-            this.cM_sep2.Size = new System.Drawing.Size(156, 6);
-            // 
             // cM_AddGrade
             // 
             this.cM_AddGrade.Image = ((System.Drawing.Image)(resources.GetObject("cM_AddGrade.Image")));
             this.cM_AddGrade.Name = "cM_AddGrade";
             this.cM_AddGrade.Size = new System.Drawing.Size(159, 22);
             this.cM_AddGrade.Text = "Add Grade";
-            // 
-            // cM_sep3
-            // 
-            this.cM_sep3.Name = "cM_sep3";
-            this.cM_sep3.Size = new System.Drawing.Size(156, 6);
             // 
             // cM_RemoveBtn
             // 
@@ -170,11 +208,6 @@
             this.cM_RemoveBtn.Size = new System.Drawing.Size(159, 22);
             this.cM_RemoveBtn.Text = "Remove Subject";
             // 
-            // cM_sep4
-            // 
-            this.cM_sep4.Name = "cM_sep4";
-            this.cM_sep4.Size = new System.Drawing.Size(156, 6);
-            // 
             // cM_RemoveGrade
             // 
             this.cM_RemoveGrade.Image = ((System.Drawing.Image)(resources.GetObject("cM_RemoveGrade.Image")));
@@ -182,20 +215,43 @@
             this.cM_RemoveGrade.Size = new System.Drawing.Size(159, 22);
             this.cM_RemoveGrade.Text = "Remove Grade";
             // 
-            // dropDownPanel
+            // previewConfBtn
             // 
-            this.dropDownPanel.BackColor = System.Drawing.Color.DimGray;
-            this.dropDownPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.dropDownPanel.Controls.Add(this.dropDownBtn);
-            this.dropDownPanel.Controls.Add(this.removeSubBtn);
-            this.dropDownPanel.Controls.Add(this.autoSafeModeBtn);
-            this.dropDownPanel.Controls.Add(this.exportCSVBtn);
-            this.dropDownPanel.Controls.Add(this.addSubBtn);
-            this.dropDownPanel.Controls.Add(this.addGradeBtn);
-            this.dropDownPanel.Location = new System.Drawing.Point(12, 12);
-            this.dropDownPanel.Name = "dropDownPanel";
-            this.dropDownPanel.Size = new System.Drawing.Size(119, 138);
-            this.dropDownPanel.TabIndex = 9;
+            this.previewConfBtn.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.previewConfBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.previewConfBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.previewConfBtn.FlatAppearance.BorderSize = 0;
+            this.previewConfBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.previewConfBtn.ForeColor = System.Drawing.Color.Black;
+            this.previewConfBtn.Image = global::gradecalculator.Properties.Resources.preview;
+            this.previewConfBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.previewConfBtn.Location = new System.Drawing.Point(0, 93);
+            this.previewConfBtn.Name = "previewConfBtn";
+            this.previewConfBtn.Size = new System.Drawing.Size(119, 23);
+            this.previewConfBtn.TabIndex = 12;
+            this.previewConfBtn.Text = "Preview config";
+            this.previewConfBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.previewConfBtn.UseVisualStyleBackColor = false;
+            this.previewConfBtn.Click += new System.EventHandler(this.previewConfBtn_Click);
+            // 
+            // importConfBtn
+            // 
+            this.importConfBtn.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.importConfBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.importConfBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.importConfBtn.FlatAppearance.BorderSize = 0;
+            this.importConfBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.importConfBtn.ForeColor = System.Drawing.Color.Black;
+            this.importConfBtn.Image = global::gradecalculator.Properties.Resources.import;
+            this.importConfBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.importConfBtn.Location = new System.Drawing.Point(0, 70);
+            this.importConfBtn.Name = "importConfBtn";
+            this.importConfBtn.Size = new System.Drawing.Size(119, 23);
+            this.importConfBtn.TabIndex = 11;
+            this.importConfBtn.Text = "Import config";
+            this.importConfBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.importConfBtn.UseVisualStyleBackColor = false;
+            this.importConfBtn.Click += new System.EventHandler(this.importConfBtn_Click);
             // 
             // dropDownBtn
             // 
@@ -216,24 +272,24 @@
             this.dropDownBtn.UseVisualStyleBackColor = false;
             this.dropDownBtn.Click += new System.EventHandler(this.dropDownBtn_Click);
             // 
-            // removeSubBtn
+            // exportConfBtn
             // 
-            this.removeSubBtn.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.removeSubBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.removeSubBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.removeSubBtn.FlatAppearance.BorderSize = 0;
-            this.removeSubBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.removeSubBtn.ForeColor = System.Drawing.Color.Black;
-            this.removeSubBtn.Image = ((System.Drawing.Image)(resources.GetObject("removeSubBtn.Image")));
-            this.removeSubBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.removeSubBtn.Location = new System.Drawing.Point(0, 69);
-            this.removeSubBtn.Name = "removeSubBtn";
-            this.removeSubBtn.Size = new System.Drawing.Size(119, 23);
-            this.removeSubBtn.TabIndex = 4;
-            this.removeSubBtn.Text = "Remove Subject";
-            this.removeSubBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.removeSubBtn.UseVisualStyleBackColor = false;
-            this.removeSubBtn.Click += new System.EventHandler(this.removeSubBtn_Click);
+            this.exportConfBtn.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.exportConfBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.exportConfBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.exportConfBtn.FlatAppearance.BorderSize = 0;
+            this.exportConfBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exportConfBtn.ForeColor = System.Drawing.Color.Black;
+            this.exportConfBtn.Image = global::gradecalculator.Properties.Resources.config;
+            this.exportConfBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.exportConfBtn.Location = new System.Drawing.Point(0, 24);
+            this.exportConfBtn.Name = "exportConfBtn";
+            this.exportConfBtn.Size = new System.Drawing.Size(119, 23);
+            this.exportConfBtn.TabIndex = 10;
+            this.exportConfBtn.Text = "Export config";
+            this.exportConfBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.exportConfBtn.UseVisualStyleBackColor = false;
+            this.exportConfBtn.Click += new System.EventHandler(this.exportConfBtn_Click);
             // 
             // autoSafeModeBtn
             // 
@@ -245,7 +301,7 @@
             this.autoSafeModeBtn.ForeColor = System.Drawing.Color.Black;
             this.autoSafeModeBtn.Image = global::gradecalculator.Properties.Resources.disable;
             this.autoSafeModeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.autoSafeModeBtn.Location = new System.Drawing.Point(0, 115);
+            this.autoSafeModeBtn.Location = new System.Drawing.Point(0, 116);
             this.autoSafeModeBtn.Name = "autoSafeModeBtn";
             this.autoSafeModeBtn.Size = new System.Drawing.Size(119, 23);
             this.autoSafeModeBtn.TabIndex = 5;
@@ -264,7 +320,7 @@
             this.exportCSVBtn.ForeColor = System.Drawing.Color.Black;
             this.exportCSVBtn.Image = global::gradecalculator.Properties.Resources.export;
             this.exportCSVBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.exportCSVBtn.Location = new System.Drawing.Point(0, 92);
+            this.exportCSVBtn.Location = new System.Drawing.Point(0, 47);
             this.exportCSVBtn.Name = "exportCSVBtn";
             this.exportCSVBtn.Size = new System.Drawing.Size(119, 23);
             this.exportCSVBtn.TabIndex = 7;
@@ -272,50 +328,6 @@
             this.exportCSVBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.exportCSVBtn.UseVisualStyleBackColor = false;
             this.exportCSVBtn.Click += new System.EventHandler(this.exportCSVBtn_Click);
-            // 
-            // addSubBtn
-            // 
-            this.addSubBtn.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.addSubBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addSubBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.addSubBtn.FlatAppearance.BorderSize = 0;
-            this.addSubBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addSubBtn.ForeColor = System.Drawing.Color.Black;
-            this.addSubBtn.Image = ((System.Drawing.Image)(resources.GetObject("addSubBtn.Image")));
-            this.addSubBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.addSubBtn.Location = new System.Drawing.Point(0, 23);
-            this.addSubBtn.Name = "addSubBtn";
-            this.addSubBtn.Size = new System.Drawing.Size(119, 23);
-            this.addSubBtn.TabIndex = 3;
-            this.addSubBtn.Text = "Add Subject";
-            this.addSubBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.addSubBtn.UseVisualStyleBackColor = false;
-            this.addSubBtn.Click += new System.EventHandler(this.addSubBtn_Click);
-            // 
-            // addGradeBtn
-            // 
-            this.addGradeBtn.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.addGradeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addGradeBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.addGradeBtn.FlatAppearance.BorderSize = 0;
-            this.addGradeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addGradeBtn.ForeColor = System.Drawing.Color.Black;
-            this.addGradeBtn.Image = ((System.Drawing.Image)(resources.GetObject("addGradeBtn.Image")));
-            this.addGradeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.addGradeBtn.Location = new System.Drawing.Point(0, 46);
-            this.addGradeBtn.Name = "addGradeBtn";
-            this.addGradeBtn.Size = new System.Drawing.Size(119, 23);
-            this.addGradeBtn.TabIndex = 6;
-            this.addGradeBtn.Text = "Add Grade";
-            this.addGradeBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.addGradeBtn.UseVisualStyleBackColor = false;
-            this.addGradeBtn.Click += new System.EventHandler(this.addGradeBtn_Click);
-            // 
-            // saveFileDialog
-            // 
-            this.saveFileDialog.FileName = "grades.csv";
-            this.saveFileDialog.Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
-            this.saveFileDialog.RestoreDirectory = true;
             // 
             // mainWindow
             // 
@@ -349,8 +361,6 @@
         private System.Windows.Forms.ColumnHeader percentHeader;
         private System.Windows.Forms.ColumnHeader gradeHeader;
         private System.Windows.Forms.ColumnHeader nameHeader;
-        private System.Windows.Forms.Button addSubBtn;
-        private System.Windows.Forms.Button removeSubBtn;
         private System.Windows.Forms.Button autoSafeModeBtn;
         private System.Windows.Forms.ContextMenuStrip mW_contextMenu;
         private System.Windows.Forms.ToolStripMenuItem cM_safeBtn;
@@ -359,7 +369,6 @@
         private System.Windows.Forms.ToolStripSeparator cM_sep1;
         private System.Windows.Forms.ToolStripSeparator cM_sep2;
         private System.Windows.Forms.Button exportCSVBtn;
-        private System.Windows.Forms.Button addGradeBtn;
         private System.Windows.Forms.ColumnHeader dateHeader;
         private System.Windows.Forms.Panel dropDownPanel;
         private System.Windows.Forms.Button dropDownBtn;
@@ -368,6 +377,11 @@
         private System.Windows.Forms.ToolStripSeparator cM_sep4;
         private System.Windows.Forms.ToolStripMenuItem cM_RemoveGrade;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.Button exportConfBtn;
+        private System.Windows.Forms.Button importConfBtn;
+        private System.Windows.Forms.Button previewConfBtn;
+        private System.Windows.Forms.SaveFileDialog saveFileDialogJson;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }
 

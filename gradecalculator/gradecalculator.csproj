@@ -129,5 +129,14 @@
   <ItemGroup>
     <None Include="assets\icons\export.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\icons\config.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\icons\import.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\icons\preview.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

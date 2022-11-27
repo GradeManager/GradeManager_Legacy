@@ -1,17 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System.Xml.Linq;
-using System.Text.RegularExpressions;
 using static gradecalculator.Subject;
 using System.Runtime.InteropServices.ComTypes;
 
@@ -31,6 +24,7 @@ namespace gradecalculator
         public static Subject selectedSubject { get; set; }
 
         private static JValue Jautosafemode { get; set; }
+        private static string configFilePath { get; set; } = GetDirectoryFromExecutable() + "\\config.json";
 
         public const string JgradeString = "grade";
         public const string JpercentageString = "percentage";
@@ -56,7 +50,7 @@ namespace gradecalculator
             percentHeader.Width = 80;
             dateHeader.Width = 120;
             nameHeader.Width = gradeList.Width - percentHeader.Width - gradeHeader.Width - dateHeader.Width;
-            if (!deserializeJsonConfig())
+            if (!deserializeJsonConfig(configFilePath))
                 Application.Exit();
             getSubjectsFromConfig();
         }
@@ -64,12 +58,12 @@ namespace gradecalculator
         private void OnApplicationExit(object sender, EventArgs e)
         {
             if ((bool)Jautosafemode.Value)
-                serializeJsonConfig();
+                serializeJsonConfig(configFilePath);
             else
             {
                 var msgBtns = MessageBox.Show("Safe changes?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (msgBtns == DialogResult.Yes)
-                    serializeJsonConfig();
+                    serializeJsonConfig(configFilePath);
             }
         }
 
@@ -84,15 +78,15 @@ namespace gradecalculator
             }
         }
 
-        private bool deserializeJsonConfig()
+        private bool deserializeJsonConfig(string configFile)
         {
-            if (!File.Exists(GetDirectoryFromExecutable() + "\\config.json"))
+            if (!File.Exists(configFile))
             {
                 MessageBox.Show("cannot find config.json file\r\n\r\nApplication is terminated", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             //Deserialize JSON file
-            using (StreamReader sr = new StreamReader(GetDirectoryFromExecutable() + "\\config.json"))
+            using (StreamReader sr = new StreamReader(configFile))
             {
                 //Init JSON variables
                 string json = sr.ReadToEnd();
@@ -107,16 +101,16 @@ namespace gradecalculator
             return true;
         }
 
-        private bool serializeJsonConfig()
+        private bool serializeJsonConfig(string configFile)
         {
-            if (!File.Exists(GetDirectoryFromExecutable() + "\\config.json"))
+            if (!File.Exists(configFile))
             {
                 MessageBox.Show("cannot find config.json file", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             try
             {
-                File.WriteAllText(GetDirectoryFromExecutable() + "\\config.json", JsonConvert.SerializeObject(file));
+                File.WriteAllText(configFile, JsonConvert.SerializeObject(file));
             }
             catch (Exception ex)
             {
@@ -126,7 +120,7 @@ namespace gradecalculator
             return true;
         }
 
-        private string GetDirectoryFromExecutable()
+        private static string GetDirectoryFromExecutable()
         {
             return Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
         }
@@ -188,7 +182,7 @@ namespace gradecalculator
             Design.changeItemVisibility(this, true, opacity);
             getSubjectsFromConfig();
             if ((bool)Jautosafemode.Value)
-                serializeJsonConfig();
+                serializeJsonConfig(configFilePath);
         }
         private void removeSubject()
         {
@@ -197,7 +191,7 @@ namespace gradecalculator
             Design.changeItemVisibility(this, true, opacity);
             getSubjectsFromConfig();
             if ((bool)Jautosafemode.Value)
-                serializeJsonConfig();
+                serializeJsonConfig(configFilePath);
         }
         private void addGrade()
         {
@@ -208,7 +202,7 @@ namespace gradecalculator
             if (selectedSubject != null)
                 selectedSubject.displayExames(gradeList);
             if ((bool)Jautosafemode.Value)
-                serializeJsonConfig();
+                serializeJsonConfig(configFilePath);
         }
         private void removeGrade()
         {
@@ -220,7 +214,7 @@ namespace gradecalculator
             selectedSubject.displayExames(gradeList);
             
             if ((bool)Jautosafemode.Value)
-                serializeJsonConfig();
+                serializeJsonConfig(configFilePath);
         }
 
         private void exportCSV()
@@ -254,36 +248,65 @@ namespace gradecalculator
                     MessageBox.Show("Failed to create CSV\r\n\r\nError: File is in use by another process", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
 
+        private void exportConf()
+        {
+            Stream stream;
+
+            if (saveFileDialogJson.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    if ((stream = saveFileDialog.OpenFile()) != null)
+                    {
+                        stream.Dispose();
+                        stream.Close();
+                    }
+                    serializeJsonConfig(Path.GetFullPath(saveFileDialogJson.FileName));
+                }
+                catch
+                {
+                    MessageBox.Show("Failed to create config\r\n\r\nError: File is in use by another process", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void importConf()
+        {
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                if (openFileDialog.FileName != null)
+                {
+                    if (deserializeJsonConfig(Path.GetFullPath(openFileDialog.FileName)))
+                        serializeJsonConfig(configFilePath);
+                    else Application.Exit();
+                    getSubjectsFromConfig();
+                }
+            }
+        }
+
+        private void previewConf()
+        {
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                if (openFileDialog.FileName != null)
+                {
+                    if (deserializeJsonConfig(Path.GetFullPath(openFileDialog.FileName)))
+                        configFilePath = Path.GetFullPath(openFileDialog.FileName);
+                    else Application.Exit();
+                    getSubjectsFromConfig();
+                }
+            }
         }
 
         //#######--------------------------------------------|
         //Controls--------------------------------------------|
         //#######--------------------------------------------|
-        private void addSubBtn_Click(object sender, EventArgs e)
-        {
-            addSubject();
-            toggleDropDown();
-            this.ActiveControl = null;
-        }
 
-        private void removeSubBtn_Click(object sender, EventArgs e)
+        private void exportConfBtn_Click(object sender, EventArgs e)
         {
-            removeSubject();
-            toggleDropDown();
-            this.ActiveControl = null;
-        }
-
-        private void autoSafeModeBtn_Click(object sender, EventArgs e)
-        {
-            toggleAutoSafeMode();
-            this.ActiveControl = null;
-        }
-
-        private void addGradeBtn_Click(object sender, EventArgs e)
-        {
-            addGrade();
-            toggleDropDown();
+            exportConf();
             this.ActiveControl = null;
         }
 
@@ -293,11 +316,28 @@ namespace gradecalculator
             this.ActiveControl = null;
         }
 
+        private void importConfBtn_Click(object sender, EventArgs e)
+        {
+            importConf();
+            this.ActiveControl = null;
+        }
+
+        private void previewConfBtn_Click(object sender, EventArgs e)
+        {
+            previewConf();
+            this.ActiveControl = null;
+        }
+        private void autoSafeModeBtn_Click(object sender, EventArgs e)
+        {
+            toggleAutoSafeMode();
+            this.ActiveControl = null;
+        }
+
         private void mW_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.S && e.Modifiers == Keys.Control)
             {
-                serializeJsonConfig();
+                serializeJsonConfig(configFilePath);
             }
         }
 
@@ -316,7 +356,7 @@ namespace gradecalculator
         //####################--------------------------------------------|
         private void CM_safeBtn_Click(object sender, EventArgs e)
         {
-            serializeJsonConfig();
+            serializeJsonConfig(configFilePath);
         }
         private void CM_AddBtn_Click(object sender, EventArgs e)
         {
@@ -411,7 +451,7 @@ namespace gradecalculator
                 lvi.Text = exam.examname;
                 lvi.SubItems.Add(exam.grade.ToString());
                 lvi.SubItems.Add(exam.percentage.ToString());
-                lvi.SubItems.Add(exam.date.ToString());
+                lvi.SubItems.Add(exam.date.ToString("dd/MM/yyyy"));
                 listView.Items.Add(lvi);
             }
         }
