@@ -37,11 +37,11 @@
             // removeSubjectLbl
             // 
             this.removeSubjectLbl.AutoSize = true;
-            this.removeSubjectLbl.Font = new System.Drawing.Font("Tempus Sans ITC", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.removeSubjectLbl.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Bold);
             this.removeSubjectLbl.ForeColor = System.Drawing.Color.Black;
             this.removeSubjectLbl.Location = new System.Drawing.Point(35, 22);
             this.removeSubjectLbl.Name = "removeSubjectLbl";
-            this.removeSubjectLbl.Size = new System.Drawing.Size(123, 19);
+            this.removeSubjectLbl.Size = new System.Drawing.Size(120, 18);
             this.removeSubjectLbl.TabIndex = 7;
             this.removeSubjectLbl.Text = "Remove Subject";
             // 
@@ -90,6 +90,7 @@
             this.Controls.Add(this.confirmBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "removeSubject";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "removeSubject";
             this.ResumeLayout(false);

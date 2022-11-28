@@ -138,5 +138,20 @@
   <ItemGroup>
     <None Include="assets\icons\preview.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\icons\GM_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\icons\GM_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\icons\Logo\GM_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\icons\Logo\GM_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\icons\Logo\GM_white.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

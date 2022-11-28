@@ -30,7 +30,6 @@ namespace gradecalculator
         public const string JpercentageString = "percentage";
         public const string JdateString = "date";
 
-        private const double opacity = 1;
         private const int panelNormalHeight = 26;
         private const int panelExpandedHeight = 138;
 
@@ -44,7 +43,6 @@ namespace gradecalculator
 
         private void mainWindow_Load(object sender, EventArgs e)
         {
-            this.Opacity = opacity;
             this.KeyPreview = true;
             gradeHeader.Width = 80;
             percentHeader.Width = 80;
@@ -52,7 +50,7 @@ namespace gradecalculator
             nameHeader.Width = gradeList.Width - percentHeader.Width - gradeHeader.Width - dateHeader.Width;
             if (!deserializeJsonConfig(configFilePath))
                 Application.Exit();
-            getSubjectsFromConfig();
+            loadConfig();
         }
 
         private void OnApplicationExit(object sender, EventArgs e)
@@ -67,7 +65,7 @@ namespace gradecalculator
             }
         }
 
-        private void getSubjectsFromConfig()
+        private void loadConfig()
         {
             subjectBx.Controls.Clear();
             subjectButtons.Clear();
@@ -76,6 +74,18 @@ namespace gradecalculator
             {
                 createSubButton(item.Key, subjectButtons.Count);
             }
+            //Refresh Lbls
+            updateLbl();
+        }
+
+        private void updateLbl()
+        {
+            if (selectedSubject != null)
+                averageCurLbl.Text = MSKMath.getArithmeticMean(selectedSubject.exames).ToString();
+
+            averageAllLbl.Text = MSKMath.getAverageOfAllSubjects(subjectButtons).ToString();
+
+            plusPointLbl.Text = MSKMath.getPlusPoints(subjectButtons).ToString();
         }
 
         private bool deserializeJsonConfig(string configFile)
@@ -169,6 +179,7 @@ namespace gradecalculator
                 selectedSubject = subject;
                 subject.getExamesFromConfig();
                 subject.displayExames(gradeList);
+                updateLbl();
             };
 
             subjectButtons.Add(subject);
@@ -177,27 +188,34 @@ namespace gradecalculator
 
         private void addSubject()
         {
-            Design.changeItemVisibility(this, false, 0.8);
+            Design.changeItemVisibility(this, false);
             aS.ShowDialog();
-            Design.changeItemVisibility(this, true, opacity);
-            getSubjectsFromConfig();
+            Design.changeItemVisibility(this, true);
+
+            loadConfig();
+
             if ((bool)Jautosafemode.Value)
                 serializeJsonConfig(configFilePath);
         }
         private void removeSubject()
         {
-            Design.changeItemVisibility(this, false, 0.8);
+            Design.changeItemVisibility(this, false);
             rS.ShowDialog();
-            Design.changeItemVisibility(this, true, opacity);
-            getSubjectsFromConfig();
+            Design.changeItemVisibility(this, true);
+
+            loadConfig();
+
             if ((bool)Jautosafemode.Value)
                 serializeJsonConfig(configFilePath);
         }
         private void addGrade()
         {
-            Design.changeItemVisibility(this, false, 0.8);
+            Design.changeItemVisibility(this, false);
             aG.ShowDialog();
-            Design.changeItemVisibility(this, true, opacity);
+            Design.changeItemVisibility(this, true);
+
+            loadConfig();
+
             //Rewrap Body of selectedSubject
             if (selectedSubject != null)
                 selectedSubject.displayExames(gradeList);
@@ -210,6 +228,8 @@ namespace gradecalculator
             {
                 selectedSubject.Jsubject.Property(item.Text).Remove();
             }
+            loadConfig();
+
             selectedSubject.getExamesFromConfig();
             selectedSubject.displayExames(gradeList);
             
@@ -281,7 +301,7 @@ namespace gradecalculator
                     if (deserializeJsonConfig(Path.GetFullPath(openFileDialog.FileName)))
                         serializeJsonConfig(configFilePath);
                     else Application.Exit();
-                    getSubjectsFromConfig();
+                    loadConfig();
                 }
             }
         }
@@ -295,7 +315,7 @@ namespace gradecalculator
                     if (deserializeJsonConfig(Path.GetFullPath(openFileDialog.FileName)))
                         configFilePath = Path.GetFullPath(openFileDialog.FileName);
                     else Application.Exit();
-                    getSubjectsFromConfig();
+                    loadConfig();
                 }
             }
         }

@@ -68,6 +68,12 @@
             this.exportConfBtn = new System.Windows.Forms.Button();
             this.autoSafeModeBtn = new System.Windows.Forms.Button();
             this.exportCSVBtn = new System.Windows.Forms.Button();
+            this.averageAllLbl = new System.Windows.Forms.Label();
+            this.averageCurLbl = new System.Windows.Forms.Label();
+            this.plusPointLbl = new System.Windows.Forms.Label();
+            this.averageAllTextLbl = new System.Windows.Forms.Label();
+            this.plusPointTextLbl = new System.Windows.Forms.Label();
+            this.averageCurTextLbl = new System.Windows.Forms.Label();
             this.mW_contextMenu.SuspendLayout();
             this.dropDownPanel.SuspendLayout();
             this.SuspendLayout();
@@ -77,7 +83,7 @@
             this.subjectBx.AutoScroll = true;
             this.subjectBx.Location = new System.Drawing.Point(12, 41);
             this.subjectBx.Name = "subjectBx";
-            this.subjectBx.Size = new System.Drawing.Size(217, 431);
+            this.subjectBx.Size = new System.Drawing.Size(217, 415);
             this.subjectBx.TabIndex = 1;
             // 
             // gradeList
@@ -89,10 +95,10 @@
             this.percentHeader,
             this.dateHeader});
             this.gradeList.HideSelection = false;
-            this.gradeList.Location = new System.Drawing.Point(379, 41);
+            this.gradeList.Location = new System.Drawing.Point(392, 41);
             this.gradeList.Name = "gradeList";
             this.gradeList.Scrollable = false;
-            this.gradeList.Size = new System.Drawing.Size(475, 431);
+            this.gradeList.Size = new System.Drawing.Size(450, 415);
             this.gradeList.TabIndex = 2;
             this.gradeList.UseCompatibleStateImageBehavior = false;
             this.gradeList.View = System.Windows.Forms.View.Details;
@@ -329,21 +335,91 @@
             this.exportCSVBtn.UseVisualStyleBackColor = false;
             this.exportCSVBtn.Click += new System.EventHandler(this.exportCSVBtn_Click);
             // 
+            // averageAllLbl
+            // 
+            this.averageAllLbl.AutoSize = true;
+            this.averageAllLbl.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold);
+            this.averageAllLbl.ForeColor = System.Drawing.SystemColors.Control;
+            this.averageAllLbl.Location = new System.Drawing.Point(129, 459);
+            this.averageAllLbl.Name = "averageAllLbl";
+            this.averageAllLbl.Size = new System.Drawing.Size(14, 14);
+            this.averageAllLbl.TabIndex = 10;
+            this.averageAllLbl.Text = "0";
+            // 
+            // averageCurLbl
+            // 
+            this.averageCurLbl.AutoSize = true;
+            this.averageCurLbl.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.averageCurLbl.ForeColor = System.Drawing.SystemColors.Control;
+            this.averageCurLbl.Location = new System.Drawing.Point(472, 460);
+            this.averageCurLbl.Name = "averageCurLbl";
+            this.averageCurLbl.Size = new System.Drawing.Size(14, 14);
+            this.averageCurLbl.TabIndex = 11;
+            this.averageCurLbl.Text = "0";
+            // 
+            // plusPointLbl
+            // 
+            this.plusPointLbl.AutoSize = true;
+            this.plusPointLbl.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold);
+            this.plusPointLbl.ForeColor = System.Drawing.SystemColors.Control;
+            this.plusPointLbl.Location = new System.Drawing.Point(129, 476);
+            this.plusPointLbl.Name = "plusPointLbl";
+            this.plusPointLbl.Size = new System.Drawing.Size(14, 14);
+            this.plusPointLbl.TabIndex = 12;
+            this.plusPointLbl.Text = "0";
+            // 
+            // averageAllTextLbl
+            // 
+            this.averageAllTextLbl.AutoSize = true;
+            this.averageAllTextLbl.ForeColor = System.Drawing.SystemColors.Control;
+            this.averageAllTextLbl.Location = new System.Drawing.Point(12, 459);
+            this.averageAllTextLbl.Name = "averageAllTextLbl";
+            this.averageAllTextLbl.Size = new System.Drawing.Size(114, 13);
+            this.averageAllTextLbl.TabIndex = 13;
+            this.averageAllTextLbl.Text = "Average grade overall:";
+            // 
+            // plusPointTextLbl
+            // 
+            this.plusPointTextLbl.AutoSize = true;
+            this.plusPointTextLbl.ForeColor = System.Drawing.SystemColors.Control;
+            this.plusPointTextLbl.Location = new System.Drawing.Point(12, 477);
+            this.plusPointTextLbl.Name = "plusPointTextLbl";
+            this.plusPointTextLbl.Size = new System.Drawing.Size(92, 13);
+            this.plusPointTextLbl.TabIndex = 14;
+            this.plusPointTextLbl.Text = "Pluspoints overall:";
+            // 
+            // averageCurTextLbl
+            // 
+            this.averageCurTextLbl.AutoSize = true;
+            this.averageCurTextLbl.ForeColor = System.Drawing.SystemColors.Control;
+            this.averageCurTextLbl.Location = new System.Drawing.Point(389, 460);
+            this.averageCurTextLbl.Name = "averageCurTextLbl";
+            this.averageCurTextLbl.Size = new System.Drawing.Size(80, 13);
+            this.averageCurTextLbl.TabIndex = 15;
+            this.averageCurTextLbl.Text = "Average grade:";
+            // 
             // mainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(866, 484);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(866, 499);
             this.ContextMenuStrip = this.mW_contextMenu;
+            this.Controls.Add(this.averageCurTextLbl);
+            this.Controls.Add(this.plusPointTextLbl);
+            this.Controls.Add(this.averageAllTextLbl);
+            this.Controls.Add(this.plusPointLbl);
+            this.Controls.Add(this.averageCurLbl);
+            this.Controls.Add(this.averageAllLbl);
             this.Controls.Add(this.dropDownPanel);
             this.Controls.Add(this.gradeList);
             this.Controls.Add(this.subjectBx);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "mainWindow";
-            this.Opacity = 0.9D;
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Grade Manager";
             this.Load += new System.EventHandler(this.mainWindow_Load);
@@ -351,6 +427,7 @@
             this.mW_contextMenu.ResumeLayout(false);
             this.dropDownPanel.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -382,6 +459,12 @@
         private System.Windows.Forms.Button previewConfBtn;
         private System.Windows.Forms.SaveFileDialog saveFileDialogJson;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.Label averageAllLbl;
+        private System.Windows.Forms.Label averageCurLbl;
+        private System.Windows.Forms.Label plusPointLbl;
+        private System.Windows.Forms.Label averageAllTextLbl;
+        private System.Windows.Forms.Label plusPointTextLbl;
+        private System.Windows.Forms.Label averageCurTextLbl;
     }
 }
 

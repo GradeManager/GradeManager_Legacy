@@ -69,11 +69,11 @@
             // addSubjectLbl
             // 
             this.addSubjectLbl.AutoSize = true;
-            this.addSubjectLbl.Font = new System.Drawing.Font("Tempus Sans ITC", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addSubjectLbl.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addSubjectLbl.ForeColor = System.Drawing.Color.Black;
             this.addSubjectLbl.Location = new System.Drawing.Point(41, 25);
             this.addSubjectLbl.Name = "addSubjectLbl";
-            this.addSubjectLbl.Size = new System.Drawing.Size(95, 19);
+            this.addSubjectLbl.Size = new System.Drawing.Size(96, 18);
             this.addSubjectLbl.TabIndex = 3;
             this.addSubjectLbl.Text = "Add Subject";
             // 
@@ -92,6 +92,7 @@
             this.MinimizeBox = false;
             this.Name = "addSubject";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "addSubject";
             this.Load += new System.EventHandler(this.addSubject_onload);

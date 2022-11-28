@@ -36,13 +36,17 @@ namespace gradecalculator
             SendMessage(textbox.Handle, 0x1501, 1, Previewtext);
         }
 
-        public static void changeItemVisibility(Form form, bool visible, double formOpacity)
+        public static void changeItemVisibility(Form form, bool visible)
         {
             foreach (Control control in form.Controls)
             {
                 control.Visible = visible;
             }
-            form.Opacity = formOpacity;
+
+            if (!visible)
+                form.BackgroundImage = Properties.Resources.GM_grey;
+            else
+                form.BackgroundImage = null;
         }
     }
 }

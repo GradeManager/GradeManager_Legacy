@@ -44,11 +44,11 @@
             // addGradeLbl
             // 
             this.addGradeLbl.AutoSize = true;
-            this.addGradeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addGradeLbl.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Bold);
             this.addGradeLbl.ForeColor = System.Drawing.Color.Black;
             this.addGradeLbl.Location = new System.Drawing.Point(47, 27);
             this.addGradeLbl.Name = "addGradeLbl";
-            this.addGradeLbl.Size = new System.Drawing.Size(87, 18);
+            this.addGradeLbl.Size = new System.Drawing.Size(80, 18);
             this.addGradeLbl.TabIndex = 4;
             this.addGradeLbl.Text = "Add Grade";
             // 
@@ -163,6 +163,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "addGrade";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "addGrade";
             this.Load += new System.EventHandler(this.addGrade_Load);

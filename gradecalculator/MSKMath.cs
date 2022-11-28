@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using static gradecalculator.Subject;
 
 namespace gradecalculator
 {
@@ -51,6 +53,64 @@ namespace gradecalculator
                 result.Add(val.key);
             }
             return result;
+        }
+
+        /// <summary>
+        /// Get arithmetic mean (average) from list
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns>arithmetic mean</returns>
+        public static double getArithmeticMean(List<Subject.Exam> list)
+        {
+            double result = 0;
+
+            int percentResult = 0;
+            
+            foreach (Subject.Exam ex in list)
+            {
+                result += ex.grade * ex.percentage;
+                percentResult += ex.percentage;
+            }
+
+            return Math.Round(result/percentResult, 2);
+        }
+
+        public static double getAverageOfAllSubjects(List<Subject> subjectList)
+        {
+            List<Exam> examList = new List<Exam>();
+
+            foreach (Subject subj in subjectList)
+            {
+                foreach (Exam exam in subj.exames)
+                {
+                    examList.Add(exam);
+                }
+            }
+
+            return getArithmeticMean(examList);
+        }
+
+        public static double getPlusPoints(List<Subject> subjectList)
+        {
+            double result = 0;
+
+            foreach (Subject subj in subjectList)
+            {
+                if (subj.exames.Count == 0)
+                    continue;
+
+                double average = getArithmeticMean(subj.exames);
+                if (average < 3.75)
+                    result += roundToNearestQuarter(average*2) -8;
+                else
+                    result += roundToNearestQuarter(average) -4;
+            }
+            return roundToNearestQuarter(result);
+        }
+
+        private static double roundToNearestQuarter(double value)
+        {
+            return Math.Round(value * 2, MidpointRounding.AwayFromZero) / 2;
         }
     }
 
