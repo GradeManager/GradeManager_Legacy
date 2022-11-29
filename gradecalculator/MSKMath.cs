@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static gradecalculator.Subject;
+using static GradeManager.Subject;
 
-namespace gradecalculator
+namespace GradeManager
 {
     internal class MSKMath
     {

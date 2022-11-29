@@ -3,7 +3,7 @@ using System;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
-namespace gradecalculator
+namespace GradeManager
 {
     public partial class addSubject : Form
     {

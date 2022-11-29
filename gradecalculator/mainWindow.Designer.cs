@@ -1,4 +1,4 @@
-﻿namespace gradecalculator
+﻿namespace GradeManager
 {
     partial class mainWindow
     {
@@ -229,7 +229,7 @@
             this.previewConfBtn.FlatAppearance.BorderSize = 0;
             this.previewConfBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.previewConfBtn.ForeColor = System.Drawing.Color.Black;
-            this.previewConfBtn.Image = global::gradecalculator.Properties.Resources.preview;
+            this.previewConfBtn.Image = global::GradeManager.Properties.Resources.preview;
             this.previewConfBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.previewConfBtn.Location = new System.Drawing.Point(0, 93);
             this.previewConfBtn.Name = "previewConfBtn";
@@ -248,7 +248,7 @@
             this.importConfBtn.FlatAppearance.BorderSize = 0;
             this.importConfBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.importConfBtn.ForeColor = System.Drawing.Color.Black;
-            this.importConfBtn.Image = global::gradecalculator.Properties.Resources.import;
+            this.importConfBtn.Image = global::GradeManager.Properties.Resources.import;
             this.importConfBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.importConfBtn.Location = new System.Drawing.Point(0, 70);
             this.importConfBtn.Name = "importConfBtn";
@@ -268,7 +268,7 @@
             this.dropDownBtn.FlatAppearance.BorderSize = 0;
             this.dropDownBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dropDownBtn.ForeColor = System.Drawing.Color.Black;
-            this.dropDownBtn.Image = global::gradecalculator.Properties.Resources.menu_dots;
+            this.dropDownBtn.Image = global::GradeManager.Properties.Resources.menu_dots;
             this.dropDownBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.dropDownBtn.Location = new System.Drawing.Point(0, 0);
             this.dropDownBtn.Name = "dropDownBtn";
@@ -286,7 +286,7 @@
             this.exportConfBtn.FlatAppearance.BorderSize = 0;
             this.exportConfBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exportConfBtn.ForeColor = System.Drawing.Color.Black;
-            this.exportConfBtn.Image = global::gradecalculator.Properties.Resources.config;
+            this.exportConfBtn.Image = global::GradeManager.Properties.Resources.config;
             this.exportConfBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.exportConfBtn.Location = new System.Drawing.Point(0, 24);
             this.exportConfBtn.Name = "exportConfBtn";
@@ -305,7 +305,7 @@
             this.autoSafeModeBtn.FlatAppearance.BorderSize = 0;
             this.autoSafeModeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.autoSafeModeBtn.ForeColor = System.Drawing.Color.Black;
-            this.autoSafeModeBtn.Image = global::gradecalculator.Properties.Resources.disable;
+            this.autoSafeModeBtn.Image = global::GradeManager.Properties.Resources.disable;
             this.autoSafeModeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.autoSafeModeBtn.Location = new System.Drawing.Point(0, 116);
             this.autoSafeModeBtn.Name = "autoSafeModeBtn";
@@ -324,7 +324,7 @@
             this.exportCSVBtn.FlatAppearance.BorderSize = 0;
             this.exportCSVBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exportCSVBtn.ForeColor = System.Drawing.Color.Black;
-            this.exportCSVBtn.Image = global::gradecalculator.Properties.Resources.export;
+            this.exportCSVBtn.Image = global::GradeManager.Properties.Resources.export;
             this.exportCSVBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.exportCSVBtn.Location = new System.Drawing.Point(0, 47);
             this.exportCSVBtn.Name = "exportCSVBtn";

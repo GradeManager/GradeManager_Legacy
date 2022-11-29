@@ -5,10 +5,8 @@ using System.Windows.Forms;
 using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using static gradecalculator.Subject;
-using System.Runtime.InteropServices.ComTypes;
 
-namespace gradecalculator
+namespace GradeManager
 {
     public partial class mainWindow : Form
     {
@@ -253,7 +251,7 @@ namespace gradecalculator
 
                         foreach (Subject subj in subjectButtons)
                         {
-                            foreach (Exam ex in subj.exames)
+                            foreach (Subject.Exam ex in subj.exames)
                             {
                                 sw.WriteLine($"{subj.Text}; {ex.examname}; {ex.grade}; {ex.percentage}; {ex.date}");
                             }
