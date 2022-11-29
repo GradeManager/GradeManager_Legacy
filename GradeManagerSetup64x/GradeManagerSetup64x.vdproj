@@ -46,12 +46,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_2EC6EAC9D668BC2C1373D61FE692607D"
-        "OwnerKey" = "8:_DEEADDF5C05E4284B6FFDD34BE670336"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_377AFFFEE81D47678AF7503F07C8135F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -60,6 +54,18 @@
         {
         "MsmKey" = "8:_45C66C55190B431887F236D1EAE65F66"
         "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_48F631D2F9964FA8BAABA12D8059DC1C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_539B08780357285BBA5DC2683C0D3980"
+        "OwnerKey" = "8:_48F631D2F9964FA8BAABA12D8059DC1C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -118,12 +124,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_B91B97AF3DA25A3550E5498BA632753C"
-        "OwnerKey" = "8:_DEEADDF5C05E4284B6FFDD34BE670336"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_C008A6B727AB4FDF8B4474A5C1C4675B"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -136,8 +136,8 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_DEEADDF5C05E4284B6FFDD34BE670336"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_E546DBF5DD61FA553030991B426071EC"
+        "OwnerKey" = "8:_48F631D2F9964FA8BAABA12D8059DC1C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -149,19 +149,19 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2EC6EAC9D668BC2C1373D61FE692607D"
+        "OwnerKey" = "8:_539B08780357285BBA5DC2683C0D3980"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_DEEADDF5C05E4284B6FFDD34BE670336"
+        "OwnerKey" = "8:_48F631D2F9964FA8BAABA12D8059DC1C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_B91B97AF3DA25A3550E5498BA632753C"
+        "OwnerKey" = "8:_E546DBF5DD61FA553030991B426071EC"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -182,6 +182,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -198,6 +206,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -327,37 +343,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2EC6EAC9D668BC2C1373D61FE692607D"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
-                "ScatterAssemblies"
-                {
-                    "_2EC6EAC9D668BC2C1373D61FE692607D"
-                    {
-                    "Name" = "8:System.Net.Http.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.Net.Http.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_1B9EE95DB85642BBB9AC596D0F6F23FE"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_377AFFFEE81D47678AF7503F07C8135F"
             {
             "SourcePath" = "8:..\\gradecalculator\\bin\\Debug\\config.json"
@@ -396,6 +381,37 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_539B08780357285BBA5DC2683C0D3980"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+                "ScatterAssemblies"
+                {
+                    "_539B08780357285BBA5DC2683C0D3980"
+                    {
+                    "Name" = "8:System.Net.Http.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:System.Net.Http.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_1B9EE95DB85642BBB9AC596D0F6F23FE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_55C4098CD76C4341A2C6B17BD42C5A0B"
@@ -578,37 +594,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B91B97AF3DA25A3550E5498BA632753C"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_B91B97AF3DA25A3550E5498BA632753C"
-                    {
-                    "Name" = "8:Newtonsoft.Json.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Newtonsoft.Json.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_1B9EE95DB85642BBB9AC596D0F6F23FE"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C008A6B727AB4FDF8B4474A5C1C4675B"
             {
             "SourcePath" = "8:..\\gradecalculator\\assets\\icons\\remove.png"
@@ -647,6 +632,37 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_E546DBF5DD61FA553030991B426071EC"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_E546DBF5DD61FA553030991B426071EC"
+                    {
+                    "Name" = "8:Newtonsoft.Json.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Newtonsoft.Json.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_1B9EE95DB85642BBB9AC596D0F6F23FE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FD502F49425147DFAEEFC5DB95A9F5A1"
@@ -879,7 +895,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_139DE0608A504883959C9DA10BA0D409"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_0CF65D20EC5044ECBB1C25FB4F2CFA35"
             {
             "Name" = "8:GradeManager"
             "Arguments" = "8:"
@@ -887,13 +903,13 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_DEEADDF5C05E4284B6FFDD34BE670336"
+            "Target" = "8:_48F631D2F9964FA8BAABA12D8059DC1C"
             "Folder" = "8:_5EE472D709D64FB6B341C3EC38F0813F"
             "WorkingFolder" = "8:_1B9EE95DB85642BBB9AC596D0F6F23FE"
-            "Icon" = "8:_5F5CF12B3BB4462ABBB414351A9E7FD6"
+            "Icon" = "8:_2A3539EE15B6465D9B0CF8D816D1B283"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_781329538BEC48BE8366EE2C3422C24E"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_115C4167253745BCBF663D7B113400BB"
             {
             "Name" = "8:GradeManager"
             "Arguments" = "8:"
@@ -901,7 +917,7 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_DEEADDF5C05E4284B6FFDD34BE670336"
+            "Target" = "8:_48F631D2F9964FA8BAABA12D8059DC1C"
             "Folder" = "8:_FB5A9D5F0DEF4B4390FBC7B1C67F41C1"
             "WorkingFolder" = "8:_1B9EE95DB85642BBB9AC596D0F6F23FE"
             "Icon" = "8:_5F5CF12B3BB4462ABBB414351A9E7FD6"
@@ -1316,9 +1332,9 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_DEEADDF5C05E4284B6FFDD34BE670336"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_48F631D2F9964FA8BAABA12D8059DC1C"
             {
-            "SourcePath" = "8:..\\gradecalculator\\obj\\Release\\GradeManager.exe"
+            "SourcePath" = "8:..\\gradecalculator\\obj\\Debug\\GradeManager.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_1B9EE95DB85642BBB9AC596D0F6F23FE"

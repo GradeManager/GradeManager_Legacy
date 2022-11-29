@@ -270,17 +270,14 @@ namespace GradeManager
 
         private void exportConf()
         {
-            Stream stream;
 
             if (saveFileDialogJson.ShowDialog() == DialogResult.OK)
             {
                 try
                 {
-                    if ((stream = saveFileDialog.OpenFile()) != null)
-                    {
-                        stream.Dispose();
-                        stream.Close();
-                    }
+                    if (!File.Exists(Path.GetFullPath(saveFileDialogJson.FileName)))
+                        File.Create(Path.GetFullPath(saveFileDialogJson.FileName)).Dispose();
+
                     serializeJsonConfig(Path.GetFullPath(saveFileDialogJson.FileName));
                 }
                 catch
