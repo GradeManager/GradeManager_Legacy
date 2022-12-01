@@ -118,12 +118,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_AF2084D5B32B484B885A20AB5BB8ECBB"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_C008A6B727AB4FDF8B4474A5C1C4675B"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -149,12 +143,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_539B08780357285BBA5DC2683C0D3980"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_48F631D2F9964FA8BAABA12D8059DC1C"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -162,6 +150,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_E546DBF5DD61FA553030991B426071EC"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_539B08780357285BBA5DC2683C0D3980"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -189,6 +183,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -213,6 +215,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -560,26 +570,6 @@
             "TargetName" = "8:import.png"
             "Tag" = "8:"
             "Folder" = "8:_11B88ACAACC842258ACCF659C79EA09D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AF2084D5B32B484B885A20AB5BB8ECBB"
-            {
-            "SourcePath" = "8:..\\gradecalculator\\assets\\icons\\Logo\\favicon.png"
-            "TargetName" = "8:favicon.png"
-            "Tag" = "8:"
-            "Folder" = "8:_41DB7C788C8C4F32BCDB446EEF97DE19"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1334,7 +1324,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_48F631D2F9964FA8BAABA12D8059DC1C"
             {
-            "SourcePath" = "8:..\\gradecalculator\\obj\\Debug\\GradeManager.exe"
+            "SourcePath" = "8:..\\gradecalculator\\obj\\Release\\GradeManager.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_1B9EE95DB85642BBB9AC596D0F6F23FE"

@@ -1,0 +1,79 @@
+C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\bin\Debug\gradecalculator.exe.config
+C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\bin\Debug\gradecalculator.exe
+C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\bin\Debug\gradecalculator.pdb
+C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\obj\Debug\gradecalculator.csproj.AssemblyReference.cache
+C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\obj\Debug\gradecalculator.csproj.SuggestedBindingRedirects.cache
+C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\obj\Debug\gradecalculator.mainWindow.resources
+C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\obj\Debug\gradecalculator.Properties.Resources.resources
+C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\obj\Debug\gradecalculator.csproj.GenerateResource.cache
+C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\obj\Debug\gradecalculator.csproj.CoreCompileInputs.cache
+C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\obj\Debug\gradecalculator.exe
+C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\obj\Debug\gradecalculator.pdb
+C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\obj\Debug\gradecalculator.csproj.CopyComplete
+C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\obj\Debug\gradecalculator.addGrade.resources
+C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\obj\Debug\gradecalculator.addSubject.resources
+C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\obj\Debug\gradecalculator.removeGrade.resources
+C:\Users\Dr Profi\Downloads\gradecalculator\gradecalculator\obj\Debug\gradecalculator.removeSubject.resources
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\gradecalculator\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\gradecalculator\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\gradecalculator\obj\Debug\gradecalculator.csproj.AssemblyReference.cache
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\gradecalculator\obj\Debug\gradecalculator.csproj.SuggestedBindingRedirects.cache
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\gradecalculator\obj\Debug\gradecalculator.csproj.GenerateResource.cache
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\gradecalculator\obj\Debug\gradecalculator.csproj.CoreCompileInputs.cache
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\gradecalculator\obj\Debug\gradecalculator.csproj.CopyComplete
+C:\Users\Linusss\Documents\Github_Repository\GradeManager\gradecalculator\bin\Debug\gradecalculator.exe.config
+C:\Users\Linusss\Documents\Github_Repository\GradeManager\gradecalculator\bin\Debug\gradecalculator.exe
+C:\Users\Linusss\Documents\Github_Repository\GradeManager\gradecalculator\bin\Debug\gradecalculator.pdb
+C:\Users\Linusss\Documents\Github_Repository\GradeManager\gradecalculator\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Linusss\Documents\Github_Repository\GradeManager\gradecalculator\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Linusss\Documents\Github_Repository\GradeManager\gradecalculator\obj\Debug\gradecalculator.csproj.AssemblyReference.cache
+C:\Users\Linusss\Documents\Github_Repository\GradeManager\gradecalculator\obj\Debug\gradecalculator.csproj.SuggestedBindingRedirects.cache
+C:\Users\Linusss\Documents\Github_Repository\GradeManager\gradecalculator\obj\Debug\gradecalculator.addGrade.resources
+C:\Users\Linusss\Documents\Github_Repository\GradeManager\gradecalculator\obj\Debug\gradecalculator.addSubject.resources
+C:\Users\Linusss\Documents\Github_Repository\GradeManager\gradecalculator\obj\Debug\gradecalculator.mainWindow.resources
+C:\Users\Linusss\Documents\Github_Repository\GradeManager\gradecalculator\obj\Debug\gradecalculator.Properties.Resources.resources
+C:\Users\Linusss\Documents\Github_Repository\GradeManager\gradecalculator\obj\Debug\gradecalculator.removeSubject.resources
+C:\Users\Linusss\Documents\Github_Repository\GradeManager\gradecalculator\obj\Debug\gradecalculator.csproj.GenerateResource.cache
+C:\Users\Linusss\Documents\Github_Repository\GradeManager\gradecalculator\obj\Debug\gradecalculator.csproj.CoreCompileInputs.cache
+C:\Users\Linusss\Documents\Github_Repository\GradeManager\gradecalculator\obj\Debug\gradecalculator.csproj.CopyComplete
+C:\Users\Linusss\Documents\Github_Repository\GradeManager\gradecalculator\obj\Debug\gradecalculator.exe
+C:\Users\Linusss\Documents\Github_Repository\GradeManager\gradecalculator\obj\Debug\gradecalculator.pdb
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\gradecalculator\obj\Debug\GradeManager.Properties.Resources.resources
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\gradecalculator\obj\Debug\GradeManager.addGrade.resources
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\gradecalculator\obj\Debug\GradeManager.addSubject.resources
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\gradecalculator\obj\Debug\GradeManager.mainWindow.resources
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\gradecalculator\obj\Debug\GradeManager.removeSubject.resources
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\gradecalculator\bin\Debug\GradeManager.exe.config
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\gradecalculator\bin\Debug\GradeManager.exe.manifest
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\gradecalculator\bin\Debug\GradeManager.application
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\gradecalculator\bin\Debug\GradeManager.exe
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\gradecalculator\bin\Debug\GradeManager.pdb
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\gradecalculator\obj\Debug\GradeManager.TrustInfo.xml
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\gradecalculator\obj\Debug\GradeManager.exe.manifest
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\gradecalculator\obj\Debug\GradeManager.application
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\gradecalculator\obj\Debug\GradeManager.exe
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\gradecalculator\obj\Debug\GradeManager.pdb
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\src\bin\Debug\GradeManager.exe.config
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\src\bin\Debug\GradeManager.exe.manifest
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\src\bin\Debug\GradeManager.application
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\src\bin\Debug\GradeManager.exe
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\src\bin\Debug\GradeManager.pdb
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\src\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\src\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\src\obj\Debug\gradecalculator.csproj.AssemblyReference.cache
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\src\obj\Debug\gradecalculator.csproj.SuggestedBindingRedirects.cache
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\src\obj\Debug\GradeManager.addGrade.resources
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\src\obj\Debug\GradeManager.addSubject.resources
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\src\obj\Debug\GradeManager.mainWindow.resources
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\src\obj\Debug\GradeManager.Properties.Resources.resources
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\src\obj\Debug\GradeManager.removeSubject.resources
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\src\obj\Debug\gradecalculator.csproj.GenerateResource.cache
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\src\obj\Debug\gradecalculator.csproj.CoreCompileInputs.cache
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\src\obj\Debug\GradeManager.TrustInfo.xml
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\src\obj\Debug\GradeManager.exe.manifest
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\src\obj\Debug\GradeManager.application
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\src\obj\Debug\gradecalculator.csproj.CopyComplete
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\src\obj\Debug\GradeManager.exe
+C:\Users\Dr Profi\Documents\Git_Repositorys\gradecalculator\src\obj\Debug\GradeManager.pdb
