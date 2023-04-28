@@ -1,3 +1,5 @@
 GradeManagerSetup64x/Debug/**
 GradeManagerSetup64x/Release/**
+src/obj/**
+src/bin/**
 grademanager_web/docker-compose.yaml
